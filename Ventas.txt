@@ -1,0 +1,146 @@
+Fecha:Wed Jun 09 01:00:41 PET 2021
+Atencion Realizada por: Rodrigo Mejia
+++++++++++++++++++++++++++++++++++++++++
+Nombre: Adriana
+Dni: 06523663
+Metodo de pago: false
+Direccion: En Tienda
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Precio	Cantidad	SubTotal
+Bolsa de chupetines  	1	S/.8.2	S/.8.2
+-------------------------------------Total                              S/.8.2
+
+Fecha:Wed Jun 09 01:02:07 PET 2021
+Atencion Realizada por: Rodrigo Mejia
+++++++++++++++++++++++++++++++++++++++++
+Nombre: Jose Mariano
+Dni: 01004545
+Metodo de pago: true
+Direccion: En Tienda
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Precio	Cantidad	SubTotal
+Arroz*Kg  	2	S/.5.2	S/.10.4
+Barra de chocolate Donofrio  	4	S/.2.5	S/.10.0
+-------------------------------------Total                              S/.20.4
+Fecha:Wed Jun 16 10:57:18 PET 2021
+Atencion Realizada por: Rodrigo Mejia
+++++++++++++++++++++++++++++++++++++++++
+Nombre: Jesus Raul
+Dni: 065412854
+Metodo de pago: false
+Direccion: Av. Ramon Castilla
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Precio	Cantidad	SubTotal
+Papas Lay  	10	S/.2.5	S/.25.0
+-------------------------------------Total                              S/.25.0
+Fecha:Tue Jun 22 23:18:52 PET 2021
+Atencion Realizada por: Marcos
+++++++++++++++++++++++++++++++++++++++++
+Nombre: Pedro Castillo
+Dni: 27427864
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+Propina agregada S/.1.50
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Precio	Cantidad	SubTotal
+Papas Lay  	5	S/.2.5	S/.12.5
+-------------------------------------Total                              S/.13.5
+Fecha:Wed Jun 30 13:54:53 PET 2021
+Atencion Realizada por: Marcos
+++++++++++++++++++++++++++++++++++++++++
+
+*******FACTURA*********Nombre: Jose Andre
+Dni: 548751527
+Metodo de pago: false
+Direccion: La Victoria  S/18
+
+R.U.C:1005487515272
+Propina agregada S/.1.50
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+Bolsa de Pan(15 un.)  	5	S/.3.0	S/.15.0
+-------------------------------------Total                              S/.34.0
+Fecha:Wed Jun 30 14:03:03 PET 2021
+Atencion Realizada por: Jose
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********Nombre: Roman Rosales
+Dni: 1548789
+Metodo de pago: true
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+Arroz*Kg  	8	S/.5.2	S/.41.6
+-------------------------------------Total
+                          -CODIGO POR DESCUENTO INGRESADO:10%                              S/.37.44
+Fecha:Wed Jun 30 16:35:42 PET 2021
+Atencion Realizada por: Marcos
+++++++++++++++++++++++++++++++++++++++++
+
+*******FACTURA*********
+Nombre: Roman
+Dni: 1457897
+Metodo de pago: false
+Direccion: ||En TIENDA||
+R.U.C:10001548521
+
+Propina agregada S/.1.50
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+Bolsa de Pan(15 un.)  	5	S/.3.0	S/.15.0
+-------------------------------------Total
+   -CODIGO POR DESCUENTO INGRESADO:10%                              S/.14.4
+Fecha:Mon May 30 22:04:08 PET 2022
+Atencion Realizada por: Jose
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: Dani :3
+Dni: 719341854
+Metodo de pago: false
+Direccion: San Miguel  S/12
+
+
+Propina agregada S/.1.50
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+Bolsa de chupetines  	10	S/.8.2	S/.82.0
+Arroz*Kg  	5	S/.5.2	S/.26.0
+-------------------------------------Total
+   -CODIGO POR DESCUENTO INGRESADO:10%                              S/.108.9
+Fecha:Wed Apr 12 11:29:30 PET 2023
+Atencion Realizada por: Jose
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: Alessandro
+Dni: 015424457
+Metodo de pago: false
+Direccion: Otros  S/22
+
+
+Propina agregada S/.1.50
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+INKA COLA 2L  	1	S/.6.0	S/.6.0
+-------------------------------------Total                              S/.29.0
+Fecha:Wed Apr 12 11:34:41 PET 2023
+Atencion Realizada por: Jose
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: NOSEWE
+Dni: 7193221
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+Barra de chocolate Donofrio  	1	S/.2.5	S/.2.5
+-------------------------------------Total
+   -CODIGO POR DESCUENTO INGRESADO:10%                              S/.2.25
