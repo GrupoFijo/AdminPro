@@ -65,6 +65,8 @@ public class Admin {
         }
     }
     
+    //SAPO.
+    
     public void ActualizarVendedores(){
          try{
            File file=new File("Vendedores.txt");//se buscara el archivo Vendedores y se eliminara
