@@ -13,6 +13,7 @@ public class Producto {
     private int codigo,cantidad;
     private float precio;
     private String descipcion;
+    private boolean dis;
     /*la clase producto se utiliza para almacenar los atributos de los productos
     que seran utilizados luego de la lectura en la clase Inventario
     */
@@ -25,6 +26,7 @@ public class Producto {
         this.descipcion = descipcion;
     }
 
+    
     
     ///metodos geter's y seter's
     public int getCodigo() {
