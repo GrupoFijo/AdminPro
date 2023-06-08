@@ -20,7 +20,7 @@ import javax.swing.JOptionPane;
  */
 public class Admin {
       public List<Vendedor> vendedores= new ArrayList<Vendedor>();// se necesitara una Lista dinamica para almanecar a los vendedores
-    
+      public SQLCon Db=new SQLCon();
     public Admin(){   
         //el constructor de esta clase lee el archivo Vendedores
     File file=new File("Vendedores.txt");
