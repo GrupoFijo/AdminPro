@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 public class ingreso extends javax.swing.JFrame {
 
    public static int index;//la variable recolecta el indice en la cual se encontro al vendedor
-   private Admin admin;
+   private Admin admin=new Admin();
 
    
    
@@ -169,7 +169,7 @@ public class ingreso extends javax.swing.JFrame {
                 b.setVisible(true);
                 dispose();
         }else{
-        for (int i = 0; i < admin.getVendedores().size(); i++) {//se realiza una busqueda secuencial en los vendedores
+        for (int i = 0; i < this.admin.getVendedores().size(); i++) {//se realiza una busqueda secuencial en los vendedores
             contrasenia=admin.getVendedores().get(i).getCodigo();    
             if((pass.equals(contrasenia))&&admin.getVendedores().get(i).isActivo()){// continua si esta activo y se encuentra la contraseña
             panelVentas a =new panelVentas();

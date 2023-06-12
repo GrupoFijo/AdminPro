@@ -18,6 +18,7 @@ public class Estadisticas {
 /*esta clase se encarga de leer los datos de Estadisticas, Producto mas vendido
 con su respectiva cantidad para hacer operaciones,tambien las ganancias totales y la cantidad de ventas realizadas
  */
+  public SQLCon Db=new SQLCon();
     public Estadisticas() {
         productoMV="";
         cant=0;

@@ -19,8 +19,8 @@ import javax.swing.JOptionPane;
  * @author daniel
  */
 public class Admin {
-      public List<Vendedor> vendedores= new ArrayList<Vendedor>();// se necesitara una Lista dinamica para almanecar a los vendedores
-      public SQLCon Db=new SQLCon();
+      public List<Vendedor> vendedores= new ArrayList<>();// se necesitara una Lista dinamica para almanecar a los vendedores
+     
     public Admin(){   
         //el constructor de esta clase lee el archivo Vendedores
     File file=new File("Vendedores.txt");
@@ -65,7 +65,6 @@ public class Admin {
         }
     }
     
-    //SAPO.
     
     public void ActualizarVendedores(){
          try{
@@ -170,7 +169,7 @@ public class Admin {
     
 ////metodos geter's and seter's
     public List<Vendedor> getVendedores() {
-        return vendedores;
+        return this.vendedores;
     }
 
     public void setVendedores(List<Vendedor> vendedores) {
