@@ -280,6 +280,12 @@
     <Component class="javax.swing.JTextField" name="cajaCantidad">
     </Component>
     <Component class="javax.swing.JTextField" name="cajaCodigo">
+      <Properties>
+        <Property name="editable" type="boolean" value="false"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cajaCodigoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
@@ -327,7 +333,6 @@
                 </Column>
               </TableColumnModel>
             </Property>
-            <Property name="rowHeight" type="int" value="20"/>
             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
             </Property>

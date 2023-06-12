@@ -1,6 +1,9 @@
 
 package proyecto_1;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 
@@ -143,6 +146,13 @@ public class agregarProducto extends javax.swing.JFrame {
             }
         });
 
+        cajaCodigo.setEditable(false);
+        cajaCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cajaCodigoActionPerformed(evt);
+            }
+        });
+
         jLabel5.setText("Productos Registrados");
 
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
@@ -164,7 +174,6 @@ public class agregarProducto extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        tablaProductos.setRowHeight(20);
         jScrollPane5.setViewportView(tablaProductos);
 
         botonGuardar.setText("Guardar");
@@ -278,10 +287,15 @@ public class agregarProducto extends javax.swing.JFrame {
         //al pulsar este botn se creara un espacio en la tabla y estos datos nuevos eran mostrados
         this.botonGuardar.setEnabled(true);
         int cantidad=Integer.parseInt(cajaCantidad.getText());
-        int codigo=Integer.parseInt(cajaCodigo.getText());
         float precio=Float.parseFloat(cajaPrecio.getText());
-        Producto producto=new Producto(codigo, cantidad, precio, this.cajaProducto.getText());
-        admin.getVendedores().get(indice).getListaProducto().add(producto);
+        //modificacion, producto necesitara un indice de la lista productos, este sera 1 mas del tamaño total
+        Producto producto=new Producto(admin.getVendedores().get(indice).lastIdProducto(), cantidad, precio, this.cajaProducto.getText());
+        try {
+            admin.getVendedores().get(indice).addProducto(producto);
+            JOptionPane.showMessageDialog(null,"Producto Nuevo Ingresado");
+        } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null,"Error de ingreso" +ex.getMessage());
+        }
         mostrar();
     }//GEN-LAST:event_botonAñadirMouseClicked
 
@@ -298,6 +312,10 @@ public class agregarProducto extends javax.swing.JFrame {
        JOptionPane.showMessageDialog(null,"Datos Actualizados con exito");
         cancelarMouseClicked(evt);
     }//GEN-LAST:event_botonGuardarMouseClicked
+
+    private void cajaCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaCodigoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaCodigoActionPerformed
     private void mostrar(){//esta funcion crea una matriz a partir de los campos de los vendedores
     String matriz[][]=new String[admin.getVendedores().get(indice).getListaProducto().size()][4];
         for (int i = 0; i < admin.getVendedores().get(indice).getListaProducto().size(); i++) {

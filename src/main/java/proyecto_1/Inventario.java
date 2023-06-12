@@ -5,6 +5,7 @@
  */
 package proyecto_1;
 
+import com.mysql.cj.xdevapi.DbDoc;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -73,7 +74,7 @@ public class Inventario {
               Producto productoAux = new Producto(idProducto, cantidad, precio, descripcion);
               this.inventario.add(productoAux);
             }
-            
+            database.getConect().close();
         }catch(Exception e){
             e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nError al conectar la base de datos");
             //si hay un error dentro de la lectura,se lanzara una excepcion
@@ -102,5 +103,5 @@ public class Inventario {
     public void addToDb(int id,int cant,float pre,String desc){
     
     }
-    
+
 }

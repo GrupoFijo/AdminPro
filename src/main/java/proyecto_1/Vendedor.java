@@ -8,6 +8,9 @@ package proyecto_1;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -88,8 +91,28 @@ public class Vendedor extends Usuario{//Usuario hereda a Vendedor
         return -1;//si no encuentra el codigo entonces este devolvera un valor de -1
     }
 
+    public int lastIdProducto() {
+      int last=ListaProducto.size();
+      return last;
+    };
+    
+    public void addProducto(Producto p) throws SQLException{
+         SQLCon database= new SQLCon();
+         
+         PreparedStatement ps;
+         ps=database.getConect().prepareStatement("INSERT INTO producto VALUES (null,'"+p.getCantidad()+"','"+p.getPrecio()+"','"+p.getDescipcion()+"','1')");
+         /*ps.setInt(1, p.getCantidad());
+         ps.setFloat(2, p.getPrecio());
+         ps.setString(3, p.getDescipcion());
+         ps.setInt(4, 1);*/
+         ps.executeUpdate();
+        
+         database.getConect().close();
+    }
+    
     
     ///Metodos Geter's y Seter's
+   
     
     public boolean isActivo() {
         return activo;
