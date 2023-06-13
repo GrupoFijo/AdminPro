@@ -48,7 +48,8 @@ public class datVendedores extends javax.swing.JInternalFrame {
         while (rs.next()) {//avanza en la puntero, pero solo en el while
             numRows++;
         }
-      
+     
+      rs=ps.executeQuery();
         String matriz[][] = new String[numRows][7];
         int row = 0;
         float aux1,aux2;
@@ -59,9 +60,9 @@ public class datVendedores extends javax.swing.JInternalFrame {
             matriz[row][1] = rs.getString("apellido");
             matriz[row][2] = Integer.toString(rs.getInt("edad"));
             matriz[row][3] = Float.toString(rs.getFloat("sueldo"));
-            matriz[row][4] = Integer.toString(rs.getInt("comisiones"));
+            matriz[row][4] = Integer.toString(rs.getInt("comision"));
             aux1 = rs.getFloat("sueldo");
-            aux2 = rs.getInt("comisiones");
+            aux2 = rs.getInt("comision");
             float total = aux1 + (aux2 * 10);
             matriz[row][5] = Float.toString(total);
             matriz[row][6] = Boolean.toString(rs.getBoolean("activo"));
