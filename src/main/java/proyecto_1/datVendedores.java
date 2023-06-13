@@ -49,7 +49,7 @@ public class datVendedores extends javax.swing.JInternalFrame {
             numRows++;
         }
      
-      rs=ps.executeQuery();
+        rs=ps.executeQuery();//vuelve a ejecutar el query
         String matriz[][] = new String[numRows][7];
         int row = 0;
         float aux1,aux2;
