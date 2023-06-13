@@ -158,7 +158,6 @@ public class Admin {
                     return true;//se cierra el archivo y retorna un valor verdadero
                 }else return false;//caso contrario devuelve un valor falso
             } catch (Exception e) {
-                e.printStackTrace();
                 JOptionPane.showMessageDialog(null,"Algo ha salido mal \n"+e.toString());
                   //en caso de un fallo en la lectura se lanzara una excepcion
             }

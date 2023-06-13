@@ -76,7 +76,7 @@ public class Inventario {
             }
             database.getConect().close();
         }catch(Exception e){
-            e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nError al conectar la base de datos");
+           JOptionPane.showMessageDialog(null, "Error al conectar la base de datos\n"+e.getMessage());
             //si hay un error dentro de la lectura,se lanzara una excepcion
         }
      }

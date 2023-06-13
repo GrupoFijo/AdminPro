@@ -15,11 +15,14 @@ public class datVendedores extends javax.swing.JInternalFrame {
      
     
     public void mostrar() throws SQLException{
-        try{
+        
         SQLCon database= new SQLCon();
         PreparedStatement ps=null;
-        ResultSet rs=null;    
-        ps=database.getConect().prepareStatement("SELECT*FROM producto");
+        ResultSet rs=null; 
+        
+        try{
+    
+        ps=database.getConect().prepareStatement("SELECT*FROM trabajador");
         rs=ps.executeQuery();
         
         /*String matriz[][]=new String[admin.getVendedores().size()][7];
@@ -42,11 +45,10 @@ public class datVendedores extends javax.swing.JInternalFrame {
             matriz[i][6]=Boolean.toString(admin.getVendedores().get(i).isActivo());*/
         
        int numRows = 0;
-        while (rs.next()) {
+        while (rs.next()) {//avanza en la puntero, pero solo en el while
             numRows++;
         }
-        rs.beforeFirst();
-
+      
         String matriz[][] = new String[numRows][7];
         int row = 0;
         float aux1,aux2;
@@ -81,11 +83,11 @@ public class datVendedores extends javax.swing.JInternalFrame {
                 return canEdit [columnIndex];
             }
         });
-        }catch (SQLException e) {
-            e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nError al conectar la base de datos");    
+            }catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al conectar la base de datos\n"+e.getLocalizedMessage());    
         }
         
-        }
+      }
         
         
 
