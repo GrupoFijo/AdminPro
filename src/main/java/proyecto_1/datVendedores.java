@@ -1,16 +1,28 @@
 
 package proyecto_1;
 
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 public class datVendedores extends javax.swing.JInternalFrame {
     private Admin admin=new Admin();
-    public datVendedores() {
+    public datVendedores() throws SQLException {
         initComponents();
         mostrar();
     }
-    public void mostrar(){
-        String matriz[][]=new String[admin.getVendedores().size()][7];
+     
+    
+    public void mostrar() throws SQLException{
+        try{
+        SQLCon database= new SQLCon();
+        PreparedStatement ps=null;
+        ResultSet rs=null;    
+        ps=database.getConect().prepareStatement("SELECT*FROM producto");
+        rs=ps.executeQuery();
+        
+        /*String matriz[][]=new String[admin.getVendedores().size()][7];
         float aux1,aux2;
         String tetxAux="\n";
         for(int i=0;i<admin.getVendedores().size();i++){//matriz sera creada a partir de los atributos de vada vendedor
@@ -18,6 +30,7 @@ public class datVendedores extends javax.swing.JInternalFrame {
             if(admin.getVendedores().get(i).getComisiones()<25)
             tetxAux+=admin.getVendedores().get(i).getNombre()+" "+admin.getVendedores().get(i).getApellido();
             tetxAux+="\n";
+            
             matriz[i][0]=admin.getVendedores().get(i).getNombre();
             matriz[i][1]=admin.getVendedores().get(i).getApellido();
             matriz[i][2]=Integer.toString(admin.getVendedores().get(i).getEdad());
@@ -26,8 +39,33 @@ public class datVendedores extends javax.swing.JInternalFrame {
             matriz[i][4]=Integer.toString(admin.getVendedores().get(i).getComisiones());
             aux2=admin.getVendedores().get(i).getComisiones();
             matriz[i][5]=Float.toString(aux1+(aux2*10));
-            matriz[i][6]=Boolean.toString(admin.getVendedores().get(i).isActivo());
+            matriz[i][6]=Boolean.toString(admin.getVendedores().get(i).isActivo());*/
+        
+       int numRows = 0;
+        while (rs.next()) {
+            numRows++;
         }
+        rs.beforeFirst();
+
+        String matriz[][] = new String[numRows][7];
+        int row = 0;
+        float aux1,aux2;
+        String tetxAux="\n";
+        
+        while (rs.next()) {
+            matriz[row][0] = rs.getString("nombre");
+            matriz[row][1] = rs.getString("apellido");
+            matriz[row][2] = Integer.toString(rs.getInt("edad"));
+            matriz[row][3] = Float.toString(rs.getFloat("sueldo"));
+            matriz[row][4] = Integer.toString(rs.getInt("comisiones"));
+            aux1 = rs.getFloat("sueldo");
+            aux2 = rs.getInt("comisiones");
+            float total = aux1 + (aux2 * 10);
+            matriz[row][5] = Float.toString(total);
+            matriz[row][6] = Boolean.toString(rs.getBoolean("activo"));
+            row++;
+        }
+           
         this.cajaComision.setText(tetxAux);
         tabla.setModel(new javax.swing.table.DefaultTableModel(//la matriz sera agregada a una tabla por defecto
             matriz,
@@ -38,13 +76,21 @@ public class datVendedores extends javax.swing.JInternalFrame {
             boolean[] canEdit = new boolean [] {
                 false, false, false, true, false, false, true
             };
-
+     
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        }catch (SQLException e) {
+            e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nError al conectar la base de datos");    
+        }
         
-    }
+        }
+        
+        
+
+        
+    
     
 
     @SuppressWarnings("unchecked")

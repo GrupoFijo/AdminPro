@@ -5,7 +5,8 @@ public class panelAdministrador extends javax.swing.JFrame {
     registrarNuevoVendedor a=new registrarNuevoVendedor();
     mostrarVentas b=new mostrarVentas();
     Mostrar_Productos c=new  Mostrar_Productos();
-    datVendedores d=new datVendedores();
+    datVendedores d = new datVendedores();
+    
     public panelAdministrador() {
         initComponents();
         this.setLocationRelativeTo(null);
