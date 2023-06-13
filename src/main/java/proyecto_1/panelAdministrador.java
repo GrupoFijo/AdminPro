@@ -1,13 +1,23 @@
 package proyecto_1;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 public class panelAdministrador extends javax.swing.JFrame {
 //dentro del panel solo se realiza el control de botones para mostrar los paneles internos
     registrarNuevoVendedor a=new registrarNuevoVendedor();
     mostrarVentas b=new mostrarVentas();
     Mostrar_Productos c=new  Mostrar_Productos();
-    datVendedores d = new datVendedores();
+    datVendedores d;
     
     public panelAdministrador() {
+        try {
+            this.d = new datVendedores();
+        } catch (SQLException ex) {
+           JOptionPane.showMessageDialog(null,"Algo ha salido mal \n"+ex.toString());
+        }
         initComponents();
         this.setLocationRelativeTo(null);
     }
