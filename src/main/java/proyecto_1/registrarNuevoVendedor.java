@@ -2,10 +2,16 @@
 package proyecto_1;
 
 import javax.swing.JOptionPane;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 
 public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
     private String codigo="";
+    private Admin admin=new Admin();
+    
     public registrarNuevoVendedor() {
         initComponents();
         this.cajaNombre.setText("");
@@ -158,9 +164,12 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
     private void cajaEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaEdadActionPerformed
      this.cajaCodigo.setText(codigo);
     }//GEN-LAST:event_cajaEdadActionPerformed
-
+        SQLCon database= new SQLCon();
+        PreparedStatement ps=null;
+        ResultSet rs=null; 
+        
     private void botonAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAceptarActionPerformed
-        try {
+        /*try {
             //este boton obtiene los datos de las cajas de texto
        JOptionPane.showMessageDialog(null,"Vendedor Ingresado");        
        Admin admin=new Admin();
@@ -173,7 +182,26 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
        admin.ActualizarVendedores(); //y finalmente se actualizan directamente a travez de la funcion 
         } catch (Exception e) {
              e.printStackTrace(); JOptionPane.showMessageDialog(null,"ERROR:"+e.toString()+"\nRellenar Correctamente los campos");
-        }       
+        }  */
+       
+        
+       String nombre=cajaNombre.getText();
+       String apellido=cajaApellido.getText();
+       int edad=Integer.parseInt(cajaEdad.getText());
+       float sueldo=Float.parseFloat(cajaSueldo.getText());
+       
+        Vendedor v = new Vendedor(sueldo, nombre, apellido, cajaCodigo.getText(), edad,20,true);
+        try {
+        admin.addVendedor(v);
+        System.out.println("Trabajador registrado correctamente.");
+        }catch (SQLException e){
+        System.out.println("Error al registrar el Trabajador: " + e.getMessage());
+        }
+        
+        
+        
+        
+        
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     private void botonGeneraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonGeneraKeyPressed

@@ -146,6 +146,12 @@ public class agregarProducto extends javax.swing.JFrame {
             }
         });
 
+        cajaPrecio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cajaPrecioActionPerformed(evt);
+            }
+        });
+
         cajaCodigo.setEditable(false);
         cajaCodigo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -316,6 +322,10 @@ public class agregarProducto extends javax.swing.JFrame {
     private void cajaCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaCodigoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cajaCodigoActionPerformed
+
+    private void cajaPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaPrecioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaPrecioActionPerformed
     private void mostrar(){//esta funcion crea una matriz a partir de los campos de los vendedores
     String matriz[][]=new String[admin.getVendedores().get(indice).getListaProducto().size()][4];
         for (int i = 0; i < admin.getVendedores().get(indice).getListaProducto().size(); i++) {
