@@ -10,6 +10,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.PrintWriter;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -165,6 +167,21 @@ public class Admin {
           return true; //caso por defecto, verdadero
     }
     
+    public void addVendedor(Vendedor v) throws SQLException {
+    SQLCon database = new SQLCon();
+    
+    PreparedStatement ps;
+    ps = database.getConect().prepareStatement("INSERT INTO trabajador VALUES (null, ?, ?, ?, 1, ?, ?)");
+    ps.setString(1, v.getNombre());
+    ps.setString(2, v.getApellido());
+    ps.setInt(3, v.getEdad());
+    ps.setFloat(4, v.getSueldo());
+    ps.setInt(5, v.getComisiones());
+    
+    ps.executeUpdate();
+    
+    database.getConect().close();
+    }
     
 ////metodos geter's and seter's
     public List<Vendedor> getVendedores() {

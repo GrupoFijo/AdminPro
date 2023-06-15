@@ -111,6 +111,8 @@ public class Vendedor extends Usuario{//Usuario hereda a Vendedor
     }
     
     
+    
+    
     ///Metodos Geter's y Seter's
    
     
