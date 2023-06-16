@@ -100,7 +100,7 @@ public class Vendedor extends Usuario{//Usuario hereda a Vendedor
          SQLCon database= new SQLCon();
          
          PreparedStatement ps;
-         ps=database.getConect().prepareStatement("INSERT INTO producto VALUES (null,'"+p.getCantidad()+"','"+p.getPrecio()+"','"+p.getDescipcion()+"','1')");
+         ps=database.getConect().prepareStatement("INSERT INTO producto VALUES ('"+p.getCodigo()+"','"+p.getCantidad()+"','"+p.getPrecio()+"','"+p.getDescipcion()+"','1')");
          /*ps.setInt(1, p.getCantidad());
          ps.setFloat(2, p.getPrecio());
          ps.setString(3, p.getDescipcion());
