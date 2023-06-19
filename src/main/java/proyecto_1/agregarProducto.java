@@ -11,12 +11,12 @@ public class agregarProducto extends javax.swing.JFrame {
 
     private Admin admin=new Admin();
     private int indice=ingreso.index;
+    private Producto producto;
     public agregarProducto() {
         this.setLocationRelativeTo(null);
         initComponents();
-        this.botonGuardar.setEnabled(false);
+        this.botonActualizar.setEnabled(false);
         this.cajaCantidad.setText("");
-        this.cajaCodigo.setText("");
         this.cajaPrecio.setText("");
         this.cajaProducto.setText("");
         mostrar();//al iniciar sera mostrado la matriz
@@ -39,15 +39,13 @@ public class agregarProducto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         cajaProducto = new javax.swing.JTextField();
         cajaPrecio = new javax.swing.JTextField();
         cajaCantidad = new javax.swing.JTextField();
-        cajaCodigo = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         tablaProductos = new javax.swing.JTable();
-        botonGuardar = new javax.swing.JButton();
+        botonActualizar = new javax.swing.JButton();
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -138,8 +136,6 @@ public class agregarProducto extends javax.swing.JFrame {
 
         jLabel3.setText("Cantidad Inicial");
 
-        jLabel4.setText("Codigo ");
-
         cajaProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cajaProductoActionPerformed(evt);
@@ -152,15 +148,9 @@ public class agregarProducto extends javax.swing.JFrame {
             }
         });
 
-        cajaCodigo.setEditable(false);
-        cajaCodigo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cajaCodigoActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("Productos Registrados");
 
+        tablaProductos.setAutoCreateRowSorter(true);
         tablaProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -182,15 +172,15 @@ public class agregarProducto extends javax.swing.JFrame {
         });
         jScrollPane5.setViewportView(tablaProductos);
 
-        botonGuardar.setText("Guardar");
-        botonGuardar.addMouseListener(new java.awt.event.MouseAdapter() {
+        botonActualizar.setText("Actualizar");
+        botonActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                botonGuardarMouseClicked(evt);
+                botonActualizarMouseClicked(evt);
             }
         });
-        botonGuardar.addActionListener(new java.awt.event.ActionListener() {
+        botonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonGuardarActionPerformed(evt);
+                botonActualizarActionPerformed(evt);
             }
         });
 
@@ -212,15 +202,14 @@ public class agregarProducto extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(cancelar)
-                        .addGap(365, 365, 365)
-                        .addComponent(botonGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(330, 330, 330)
+                        .addComponent(botonActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel3))))
+                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
@@ -233,9 +222,7 @@ public class agregarProducto extends javax.swing.JFrame {
                         .addComponent(cajaProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cajaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cajaCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addComponent(cajaCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(60, 60, 60))
         );
         layout.setVerticalGroup(
@@ -253,11 +240,7 @@ public class agregarProducto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cajaCantidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(cajaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
+                .addGap(45, 45, 45)
                 .addComponent(botonAñadir)
                 .addGap(17, 17, 17)
                 .addComponent(jLabel5)
@@ -266,7 +249,7 @@ public class agregarProducto extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cancelar)
-                    .addComponent(botonGuardar))
+                    .addComponent(botonActualizar))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -285,19 +268,21 @@ public class agregarProducto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cajaProductoActionPerformed
 
-    private void botonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonGuardarActionPerformed
+    private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_botonGuardarActionPerformed
+    }//GEN-LAST:event_botonActualizarActionPerformed
 
     private void botonAñadirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAñadirMouseClicked
         //al pulsar este botn se creara un espacio en la tabla y estos datos nuevos eran mostrados
-        this.botonGuardar.setEnabled(true);
+        this.botonActualizar.setEnabled(true);
         int cantidad=Integer.parseInt(cajaCantidad.getText());
+        
         float precio=Float.parseFloat(cajaPrecio.getText());
         //modificacion, producto necesitara un indice de la lista productos, este sera 1 mas del tamaño total
-        Producto producto=new Producto(admin.getVendedores().get(indice).lastIdProducto(), cantidad, precio, this.cajaProducto.getText());
-        try {
+        producto=new Producto(admin.getVendedores().get(indice).lastIdProducto()+1000, cantidad, precio, this.cajaProducto.getText());
+          try {
             admin.getVendedores().get(indice).addProducto(producto);
+            admin.getVendedores().get(indice).getListaProducto().add(producto);
             JOptionPane.showMessageDialog(null,"Producto Nuevo Ingresado");
         } catch (SQLException ex) {
            JOptionPane.showMessageDialog(null,"Error de ingreso" +ex.getMessage());
@@ -312,16 +297,10 @@ public class agregarProducto extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_cancelarMouseClicked
 
-    private void botonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonGuardarMouseClicked
+    private void botonActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonActualizarMouseClicked
        //pulsando este boton se actualizara directamente los datos de los productos
-        admin.getVendedores().get(indice).ActualizarInventario(admin.getVendedores().get(indice).getListaProducto());
-       JOptionPane.showMessageDialog(null,"Datos Actualizados con exito");
-        cancelarMouseClicked(evt);
-    }//GEN-LAST:event_botonGuardarMouseClicked
-
-    private void cajaCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaCodigoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaCodigoActionPerformed
+          mostrar();
+    }//GEN-LAST:event_botonActualizarMouseClicked
 
     private void cajaPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaPrecioActionPerformed
         // TODO add your handling code here:
@@ -343,10 +322,10 @@ public class agregarProducto extends javax.swing.JFrame {
             boolean[] canEdit = new boolean [] {
                 false, false, false, false
             };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
+            //hacer que la celda sea editable
+            //public boolean isCellEditable(int rowIndex, int columnIndex) {
+              //  return canEdit [columnIndex];
+            //}
         });  
         
     }
@@ -380,25 +359,21 @@ public class agregarProducto extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+       
                 new agregarProducto().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botonActualizar;
     private javax.swing.JButton botonAñadir;
-    private javax.swing.JButton botonGuardar;
     private javax.swing.JTextField cajaCantidad;
-    private javax.swing.JTextField cajaCodigo;
     private javax.swing.JTextField cajaPrecio;
     private javax.swing.JTextField cajaProducto;
     private javax.swing.JButton cancelar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
