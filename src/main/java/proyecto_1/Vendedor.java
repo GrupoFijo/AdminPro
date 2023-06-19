@@ -20,16 +20,19 @@ import javax.swing.JOptionPane;
 public class Vendedor extends Usuario{//Usuario hereda a Vendedor
     private float sueldo;
     private String apellido;
+    private String contraseña;
+    private String usuario;
     private int comisiones;
     private List<Producto>ListaProducto;
     private boolean activo;
     static List<Integer>carrito;
     
     
-    public Vendedor(float sueldo, String nombre,String apellido, String codigo, int edad,int comisiones,boolean activo) {
+    public Vendedor(float sueldo, String nombre,String apellido,String usuario, String codigo, int edad,int comisiones,boolean activo) {
         super(nombre, codigo, edad);
         this.sueldo = sueldo;
         this.apellido=apellido;
+        this.usuario=usuario;
         this.comisiones=comisiones;
         this.activo=activo;
         //Al iniciar el Inventario este sera lecturado del archivo
@@ -147,6 +150,14 @@ public class Vendedor extends Usuario{//Usuario hereda a Vendedor
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }    
 
     public int getComisiones() {
         return comisiones;

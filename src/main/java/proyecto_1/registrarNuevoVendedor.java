@@ -37,6 +37,12 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
         cajaApellido = new javax.swing.JTextField();
         botonGenera = new javax.swing.JButton();
         cajaCodigo = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        cajaUsuario = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        cajaComision = new javax.swing.JTextField();
+
+        getContentPane().setLayout(null);
 
         botonAceptar.setText("Aceptar");
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -49,22 +55,48 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                 botonAceptarKeyPressed(evt);
             }
         });
+        getContentPane().add(botonAceptar);
+        botonAceptar.setBounds(330, 410, 72, 23);
 
         jLabel1.setText("Nombre");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(10, 30, 44, 16);
 
         jLabel2.setText("Edad");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 113, 26, 16);
 
         jLabel3.setText("Contraseña");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(10, 410, 60, 16);
 
-        jLabel4.setText("Sueldo");
+        jLabel4.setText("Comision");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(10, 230, 60, 16);
+
+        cajaSueldo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cajaSueldoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cajaSueldo);
+        cajaSueldo.setBounds(70, 150, 351, 22);
+        getContentPane().add(cajaNombre);
+        cajaNombre.setBounds(67, 30, 354, 22);
 
         cajaEdad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cajaEdadActionPerformed(evt);
             }
         });
+        getContentPane().add(cajaEdad);
+        cajaEdad.setBounds(70, 110, 354, 22);
 
         jLabel5.setText("Apellido");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(10, 73, 44, 16);
+        getContentPane().add(cajaApellido);
+        cajaApellido.setBounds(70, 70, 354, 22);
 
         botonGenera.setText("Generar Contraseña");
         botonGenera.addActionListener(new java.awt.event.ActionListener() {
@@ -77,82 +109,24 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                 botonGeneraKeyPressed(evt);
             }
         });
+        getContentPane().add(botonGenera);
+        botonGenera.setBounds(70, 280, 134, 53);
 
         cajaCodigo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        getContentPane().add(cajaCodigo);
+        cajaCodigo.setBounds(100, 390, 143, 64);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1)
-                        .addGap(13, 13, 13)
-                        .addComponent(cajaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel2))
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(cajaEdad, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
-                                    .addComponent(cajaApellido)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cajaSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(botonGenera))))))
-                .addContainerGap(128, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cajaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonAceptar)
-                .addGap(87, 87, 87))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(botonAceptar)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(cajaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addComponent(jLabel5))
-                            .addComponent(cajaApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(cajaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(cajaSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addComponent(botonGenera, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cajaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(117, Short.MAX_VALUE))
-        );
+        jLabel6.setText("Sueldo");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(13, 153, 36, 16);
+        getContentPane().add(cajaUsuario);
+        cajaUsuario.setBounds(70, 190, 351, 22);
+
+        jLabel7.setText("Usuario");
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(10, 190, 40, 16);
+        getContentPane().add(cajaComision);
+        cajaComision.setBounds(70, 230, 351, 22);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -187,10 +161,12 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
         
        String nombre=cajaNombre.getText();
        String apellido=cajaApellido.getText();
+       String usuario=cajaUsuario.getText();
+       int comi=Integer.parseInt(cajaComision.getText());
        int edad=Integer.parseInt(cajaEdad.getText());
        float sueldo=Float.parseFloat(cajaSueldo.getText());
        
-        Vendedor v = new Vendedor(sueldo, nombre, apellido, cajaCodigo.getText(), edad,20,true);
+        Vendedor v = new Vendedor(sueldo, nombre, apellido, usuario, cajaCodigo.getText(), edad,comi,true);
         try {
         admin.addVendedor(v);
         System.out.println("Trabajador registrado correctamente.");
@@ -230,19 +206,27 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
       
     }//GEN-LAST:event_botonGeneraActionPerformed
 
+    private void cajaSueldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaSueldoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaSueldoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAceptar;
     private javax.swing.JButton botonGenera;
     private javax.swing.JTextField cajaApellido;
     private javax.swing.JLabel cajaCodigo;
+    private javax.swing.JTextField cajaComision;
     private javax.swing.JTextField cajaEdad;
     private javax.swing.JTextField cajaNombre;
     private javax.swing.JTextField cajaSueldo;
+    private javax.swing.JTextField cajaUsuario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

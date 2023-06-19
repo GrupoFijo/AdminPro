@@ -49,12 +49,13 @@ public class Admin {
                 while((code = br.readLine())!=null){//se leera hasta el final del archivo
                 String name=br.readLine();
                 String lastName=br.readLine();
+                String user=br.readLine();
                 int age=Integer.parseInt(br.readLine());
                 float salary=Float.parseFloat(br.readLine());
                 int commision=Integer.parseInt(br.readLine());
                 boolean activo=Boolean.parseBoolean(br.readLine());
                 //pasamos las variables a al constructor de la clase vendedor para crear un nuevo vendedor en la memoria
-                Vendedor vendedorAux=new Vendedor(salary,name,lastName,code,age,commision,activo);
+                Vendedor vendedorAux=new Vendedor(salary,name,lastName,user,code,age,commision,activo);
                 //y este se almacena en la coleccion vendedores
                 vendedores.add(vendedorAux);
                 }
