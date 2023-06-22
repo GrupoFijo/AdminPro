@@ -15,6 +15,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 /**
  *
@@ -25,7 +28,7 @@ public class Admin {
      
     public Admin(){   
         //el constructor de esta clase lee el archivo Vendedores
-    File file=new File("Vendedores.txt");
+    /*File file=new File("Vendedores.txt");
         FileReader fr=null;
         BufferedReader br=null;
         if(!file.exists()){//si no existe entonces se creara un archivo nuevo
@@ -65,7 +68,36 @@ public class Admin {
                 //en caso de un fallo en la lectura se lanzara una excepcion
             }
            
+        }*/
+    
+        String url = "jdbc:mysql://localhost:3306/nombre_basedatos"; // Reemplaza "nombre_basedatos" con el nombre de tu base de datos
+        String user = "usuario_mysql"; // Reemplaza "usuario_mysql" con tu nombre de usuario de MySQL
+        String password = "contraseña_mysql"; // Reemplaza "contraseña_mysql" con tu contraseña de MySQL
+
+        try {
+        Connection connection = DriverManager.getConnection(url, user, password);
+
+        PreparedStatement statement = connection.prepareStatement("INSERT INTO vendedores (salary, name, lastName, user, code, age, commision, activo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+
+        for (Vendedor vendedor : vendedores) {
+        statement.setFloat(1, vendedor.getSueldo());
+        statement.setString(2, vendedor.getNombre());
+        statement.setString(3, vendedor.getApellido());
+        statement.setString(4, vendedor.getUsuario());
+        statement.setString(5, vendedor.getCodigo());
+        statement.setInt(6, vendedor.getEdad());
+        statement.setInt(7, vendedor.getComisiones());
+        statement.setBoolean(8, vendedor.isActivo());
+        statement.executeUpdate();
         }
+
+    statement.close(); // Cierra el PreparedStatement
+    connection.close(); // Recuerda cerrar la conexión cuando hayas terminado
+} catch (SQLException e) {
+    e.printStackTrace();
+    JOptionPane.showMessageDialog(null, "¡Oh! Algo ha salido mal.\nNo se ha podido establecer la conexión con la base de datos.");
+}
+    
     }
     
     
