@@ -4,12 +4,12 @@ Antonio
 Vargas Vega
 20
 2000.0
-26
+25
 true
 null
 Jose
 Capcha
 18
 500.0
-1
+2
 true

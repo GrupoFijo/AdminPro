@@ -499,14 +499,14 @@ public class fomularioVentas extends javax.swing.JFrame {
           ps_iV.close();
             
                                                                                   //id,preU,descr,cant,idPro,idVenta                                                       
-          PreparedStatement ps_=database.getConect().prepareStatement("INSERT INTO detalleventas VALUES(null,?,?,?,?,?)");
+          PreparedStatement ps_=database.getConect().prepareStatement("INSERT INTO detalleventa VALUES(null,?,?,?,?,?)");
           for(int i=0;i<panelVenderProducto.carrito.size();i++){                               
           indexAux=panelVenderProducto.carrito.get(i);  
           cantAux=panelVenderProducto.cantidades.get(i);
             ps_.setFloat(1, panelVenderProducto.admin.getVendedores().get(indice).getListaProducto().get(indexAux).getPrecio());
             ps_.setString(2, panelVenderProducto.admin.getVendedores().get(indice).getListaProducto().get(indexAux).getDescipcion());
             ps_.setInt(3, cantAux);
-            ps_.setInt(4, indexAux);
+            ps_.setInt(4, panelVenderProducto.admin.getVendedores().get(indice).getListaProducto().get(indexAux).getCodigo());
             ps_.setInt(5, idVenta); 
             ps_.executeUpdate();
             }

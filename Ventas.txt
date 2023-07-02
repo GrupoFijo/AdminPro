@@ -330,3 +330,46 @@ Direccion: ||En TIENDA||
 Producto	Cantidad	Precio	SubTotal
 pan  	1	S/.1.2	S/.1.2
 -------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 17:05:49 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 12
+Dni: 31212312
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 17:06:25 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: ultimo
+Dni: 123
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 17:08:12 PET 2023
+Atencion Realizada por: Jose
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: Dani
+Dni: 700
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+Arroz  	1	S/.2.0	S/.2.0
+pan  	2	S/.1.2	S/.2.4
+-------------------------------------Total                              S/.4.4

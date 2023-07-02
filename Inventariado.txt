@@ -2,12 +2,12 @@
 Producto 
 pan
 1000
-19
+18
 1.2
 Producto 
 Arroz
 1001
-3
+2
 2.0
 Producto 
 1
