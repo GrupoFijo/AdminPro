@@ -17,6 +17,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -27,77 +28,36 @@ public class Admin {
       public List<Vendedor> vendedores= new ArrayList<>();// se necesitara una Lista dinamica para almanecar a los vendedores
      
     public Admin(){   
-        //el constructor de esta clase lee el archivo Vendedores
-    /*File file=new File("Vendedores.txt");
-        FileReader fr=null;
-        BufferedReader br=null;
-        if(!file.exists()){//si no existe entonces se creara un archivo nuevo
-            try {
-                file.createNewFile();
-                fr=new FileReader(file);
-                fr.close();
-                JOptionPane.showMessageDialog(null,"No hay Usuarios registrados\nSolo el administrador debe acceder");
-                //se da a conocer que el archivo esta vacio
-            } catch (Exception e) {
-            e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nNo se a podido leer los ficheros");
-            //en caso de un fallo en la lectura se lanzara una excepcion
-            }
-        }else//en caso de que el archivo exista se leera linea por linea y se almacenara en las variables
-            {
-            try {
-                fr=new FileReader(file);
-                br=new BufferedReader(fr);
-                String aux=br.readLine();
-                String code;
-                while((code = br.readLine())!=null){//se leera hasta el final del archivo
-                String name=br.readLine();
-                String lastName=br.readLine();
-                String user=br.readLine();
-                int age=Integer.parseInt(br.readLine());
-                float salary=Float.parseFloat(br.readLine());
-                int commision=Integer.parseInt(br.readLine());
-                boolean activo=Boolean.parseBoolean(br.readLine());
-                //pasamos las variables a al constructor de la clase vendedor para crear un nuevo vendedor en la memoria
-                Vendedor vendedorAux=new Vendedor(salary,name,lastName,user,code,age,commision,activo);
-                //y este se almacena en la coleccion vendedores
-                vendedores.add(vendedorAux);
-                }
-                fr.close();//cerramos el archivo leido
-            } catch (Exception e) {
-                e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nNo se a podido leer los ficheros");
-                //en caso de un fallo en la lectura se lanzara una excepcion
-            }
-           
-        }*/
-    
-        String url = "jdbc:mysql://localhost:3306/nombre_basedatos"; // Reemplaza "nombre_basedatos" con el nombre de tu base de datos
-        String user = "usuario_mysql"; // Reemplaza "usuario_mysql" con tu nombre de usuario de MySQL
-        String password = "contraseña_mysql"; // Reemplaza "contraseña_mysql" con tu contraseña de MySQL
+  
+        SQLCon database= new SQLCon();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
 
         try {
-        Connection connection = DriverManager.getConnection(url, user, password);
-
-        PreparedStatement statement = connection.prepareStatement("INSERT INTO vendedores (salary, name, lastName, user, code, age, commision, activo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-
-        for (Vendedor vendedor : vendedores) {
-        statement.setFloat(1, vendedor.getSueldo());
-        statement.setString(2, vendedor.getNombre());
-        statement.setString(3, vendedor.getApellido());
-        statement.setString(4, vendedor.getUsuario());
-        statement.setString(5, vendedor.getCodigo());
-        statement.setInt(6, vendedor.getEdad());
-        statement.setInt(7, vendedor.getComisiones());
-        statement.setBoolean(8, vendedor.isActivo());
-        statement.executeUpdate();
-        }
-
-    statement.close(); // Cierra el PreparedStatement
+        Connection connection = database.getConect();
+          ps=database.getConect().prepareStatement("SELECT*FROM trabajador");
+          rs=ps.executeQuery();
+        //PreparedStatement statement = connection.prepareStatement("INSERT INTO vendedores (salary, name, lastName, user, code, age, commision, activo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+       while(rs.next()){
+           int idTrabajador=rs.getInt("idTrabajador");
+           String nombre=rs.getString("nombre");
+           String apellido=rs.getString("apellido");
+           int edad=rs.getInt("edad");
+           String contrasenia=rs.getString("contrasenia");
+           String usuario=rs.getString("usuario");
+           Boolean activo=rs.getBoolean("activo");
+           Float sueldo=rs.getFloat("sueldo");
+           int comision=rs.getInt("comision");
+           Vendedor vendedor=new Vendedor(idTrabajador,sueldo,nombre,apellido,usuario,contrasenia,edad,comision,activo);
+           this.vendedores.add(vendedor);
+       }
+       //ps.executeUpdate();
+    //ps.close(); // Cierra el PreparedStatement
     connection.close(); // Recuerda cerrar la conexión cuando hayas terminado
 } catch (SQLException e) {
     e.printStackTrace();
     JOptionPane.showMessageDialog(null, "¡Oh! Algo ha salido mal.\nNo se ha podido establecer la conexión con la base de datos.");
 }
-    
     }
     
     

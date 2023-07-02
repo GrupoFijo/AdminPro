@@ -28,41 +28,10 @@ public class Inventario {
     PreparedStatement ps=null;
     ResultSet rs=null;
     public Inventario(){
-        //el Constructor de Inventario lee el archivo Inventariado.txt 
-        
-        /*File archivo = new File ("Inventariado.txt");
-        FileReader fr = null;
-        BufferedReader br = null;
-        if(!archivo.exists()){//en caso de que el archivo no exita, creara uno nuevo
-        try{
-        archivo.createNewFile();
-        fr=new FileReader(archivo);
-        fr.close();
-            JOptionPane.showMessageDialog(null, "No hay datos en el inventario");//se indica a travez de un mensaje que el inventario esta vacio
-        }catch(IOException e){
-            e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nNo se puede conectar a la base de datos");
-            //si hay un error dentro de la lectura entonces se lanzara una excepxion
-            }
-        }*/
-        //else//en caso de que el archivo si existe,procederemos a realizar la lectura del fichero
+      
         {
         try{
-            /*
-            fr = new FileReader(archivo);
-            br = new BufferedReader(fr);
-            this.propinas=Float.parseFloat(br.readLine());//la primera linea del archivo siempre dara el almacenamiento de las propinas obtenidas
-            String descripcion;
-            while((descripcion = br.readLine())!=null)//el bluce continua hasta leer todo el fichero
-            {
-                String descripcionProducto = br.readLine();
-                int codigoProducto = Integer.parseInt(br.readLine());
-                int cantidadProducto =Integer.parseInt(br.readLine());
-                float precioProducto =Float.parseFloat(br.readLine());
-                Producto productoAux = new Producto(codigoProducto,cantidadProducto,precioProducto,descripcionProducto);
-                //despues de leer lineas del archivo,creamos Productos y procedemos a almacenar cada uno en la coleccion Inventario
-                this.inventario.add(productoAux);
-            }
-            fr.close();*/
+           
             ps=database.getConect().prepareStatement("SELECT*FROM producto");
             rs=ps.executeQuery(); 
             while(rs.next()){

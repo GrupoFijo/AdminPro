@@ -19,17 +19,20 @@ import javax.swing.JOptionPane;
 
 public class Vendedor extends Usuario{//Usuario hereda a Vendedor
     private float sueldo;
+    private int id;
+    //nombre y edad extraidos de la clase usuario
     private String apellido;
-    private String contraseña;
+    private String codigo;//contraseña
     private String usuario;
     private int comisiones;
-    private List<Producto>ListaProducto;
     private boolean activo;
+    private List<Producto>ListaProducto;
     static List<Integer>carrito;
     
     
-    public Vendedor(float sueldo, String nombre,String apellido,String usuario, String codigo, int edad,int comisiones,boolean activo) {
-        super(nombre, codigo, edad);
+    public Vendedor(int id,float sueldo, String nombre,String apellido,String usuario, String codigo, int edad,int comisiones,boolean activo) {
+        super(nombre,codigo,edad);
+        this.id=id;
         this.sueldo = sueldo;
         this.apellido=apellido;
         this.usuario=usuario;
@@ -99,6 +102,7 @@ public class Vendedor extends Usuario{//Usuario hereda a Vendedor
       return last;
     };
     
+    
     public void addProducto(Producto p) throws SQLException{
          SQLCon database= new SQLCon();
          
@@ -167,6 +171,17 @@ public class Vendedor extends Usuario{//Usuario hereda a Vendedor
         this.comisiones +=1;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+       
+    
+    
     @Override
     public String toString() {
         return  "\n"+codigo+"\n"+nombre + "\n"+ apellido + "\n" +edad+"\n"+sueldo+"\n"+ comisiones+"\n"+activo;
