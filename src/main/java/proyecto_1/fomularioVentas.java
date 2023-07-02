@@ -1,12 +1,22 @@
-
 package proyecto_1;
+
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class fomularioVentas extends javax.swing.JFrame {
 
-  
+  private int indice=ingreso.index;
     public static int adicional;
     public static String direccion;
     public static String textFormulario=new String();
+    private SQLCon database= new SQLCon();
+    private PreparedStatement ps=null;
+    private ResultSet rs=null;
     public fomularioVentas() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -71,7 +81,7 @@ public class fomularioVentas extends javax.swing.JFrame {
             }
         });
 
-        botonAceptar.setText("Aceptar");
+        botonAceptar.setText("Finalizar");
         botonAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonAceptarMouseClicked(evt);
@@ -139,7 +149,7 @@ public class fomularioVentas extends javax.swing.JFrame {
 
         jLabel6.setText("Metodo de Pago");
 
-        check.setText("Propina(S/.1.50)");
+        check.setText("Propina(S/.5.00)");
         check.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkActionPerformed(evt);
@@ -187,7 +197,7 @@ public class fomularioVentas extends javax.swing.JFrame {
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(166, 166, 166))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 109, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(cajaDNI, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                                     .addComponent(cajaNombre, javax.swing.GroupLayout.Alignment.TRAILING)))
@@ -212,7 +222,7 @@ public class fomularioVentas extends javax.swing.JFrame {
                                                         .addComponent(jLabel6))
                                                     .addGap(8, 8, 8))
                                                 .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE)
+                                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addComponent(jLabel8)
                                                     .addGap(18, 18, 18)))
@@ -319,28 +329,46 @@ public class fomularioVentas extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     private void botonAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAceptarMouseClicked
-        //al pulsar este boton se pasara los datos obtenidos y se agregan a la variable TextFormulario para pasar a la impresion
-        boolean metodopago;
-       if(rbTarjeta.isSelected()){
-           metodopago=true;
-       }else metodopago=false;
-       if(rbTienda.isSelected())
-           direccion="||En TIENDA||";
-      Cliente cliente= new Cliente(this.cajaNombre.getText(), metodopago, this.cajaDNI.getText(),direccion);
-      if(botonFactura.isSelected()){
-          textFormulario="\n*******FACTURA*********\n";
-      }else textFormulario="\n*******BOLETA DE VENTA*********\n";
-      textFormulario+=cliente.toString();
-      if(botonFactura.isSelected())
-      {
-      textFormulario+="R.U.C:"+cajaRUC.getText();
-      }
-       if(check.isSelected()){
-           adicional+=1.50;
-        textFormulario+="\n\nPropina agregada S/.1.50";
-        }       
-      panelDeImpresion c=new panelDeImpresion();
-      c.setVisible(true);
+         boolean metodopago;
+        try {
+            //al pulsar este boton se pasara los datos obtenidos y se agregan a la variable TextFormulario para pasar a la impresion
+                
+           if(rbTarjeta.isSelected()){
+              metodopago=true;
+           }else metodopago=false;
+           if(rbTienda.isSelected())
+               direccion="||En TIENDA||";
+          Cliente cliente= new Cliente(this.cajaNombre.getText(), metodopago, this.cajaDNI.getText(),direccion);
+          if(botonFactura.isSelected()){
+              textFormulario="\n*******FACTURA*********\n";
+        }else textFormulario="\n*******BOLETA DE VENTA*********\n";
+        textFormulario+=cliente.toString();
+          if(botonFactura.isSelected())
+          {
+        textFormulario+="R.U.C:"+cajaRUC.getText();
+        }
+        if(check.isSelected()){
+            adicional+=5;
+            textFormulario+="\n\nPropina agregada S/.1.50";
+            }       
+        //////////lo que se ira a la DB
+        LocalDate fecha=LocalDate.now();
+            ps=database.getConect().prepareStatement("INSERT INTO venta VALUES (null,?,?,?,?)");
+            ps.setDate(1,java.sql.Date.valueOf(java.time.LocalDate.now()));
+            ps.setString(2, cliente.getNombre());
+            ps.setFloat(3, panelVenderProducto.subtotal+adicional);//total
+            ps.setInt(4, panelVenderProducto.admin.getVendedores().get(indice).getId());//id
+            ps.executeUpdate();
+            ps.close();
+         insertarDetalleVenta();
+         database.getConect().close();
+        panelDeImpresion c=new panelDeImpresion();
+        c.setVisible(true);
+                   
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Algo ha salido mal con la venta. \nError:"+ex.toString());
+        }
+       
     }//GEN-LAST:event_botonAceptarMouseClicked
 
     private void comboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBoxActionPerformed
@@ -457,4 +485,35 @@ public class fomularioVentas extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbTarjeta;
     private javax.swing.JRadioButton rbTienda;
     // End of variables declaration//GEN-END:variables
+
+    private void insertarDetalleVenta() {
+     try {
+          int indexAux=0,cantAux=0,idVenta;
+          PreparedStatement ps_iV=database.getConect().prepareStatement("SELECT * FROM venta ORDER BY idVenta DESC");
+          ResultSet rs=ps_iV.executeQuery();
+          rs.next();
+          System.out.println(rs.getInt("idVenta"));
+          idVenta=rs.getInt("idVenta");
+          JOptionPane.showMessageDialog(null,"rs listo: id->");
+          rs.close();
+          ps_iV.close();
+            
+                                                                                  //id,preU,descr,cant,idPro,idVenta                                                       
+          PreparedStatement ps_=database.getConect().prepareStatement("INSERT INTO detalleventas VALUES(null,?,?,?,?,?)");
+          for(int i=0;i<panelVenderProducto.carrito.size();i++){                               
+          indexAux=panelVenderProducto.carrito.get(i);  
+          cantAux=panelVenderProducto.cantidades.get(i);
+            ps_.setFloat(1, panelVenderProducto.admin.getVendedores().get(indice).getListaProducto().get(indexAux).getPrecio());
+            ps_.setString(2, panelVenderProducto.admin.getVendedores().get(indice).getListaProducto().get(indexAux).getDescipcion());
+            ps_.setInt(3, cantAux);
+            ps_.setInt(4, indexAux);
+            ps_.setInt(5, idVenta); 
+            ps_.executeUpdate();
+            }
+          
+      } catch (SQLException ex) {
+          JOptionPane.showMessageDialog(null,"Algo ha salido mal en el formulario \nError:"+ex.toString());
+      }
+      
+    }
 }

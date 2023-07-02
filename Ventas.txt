@@ -144,3 +144,189 @@ Producto	Cantidad	Precio	SubTotal
 Barra de chocolate Donofrio  	1	S/.2.5	S/.2.5
 -------------------------------------Total
    -CODIGO POR DESCUENTO INGRESADO:10%                              S/.2.25
+Fecha:Sun Jul 02 15:29:16 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: Daniel 
+Dni: 719339952
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+
+Propina agregada S/.1.50
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.6.2
+Fecha:Sun Jul 02 15:31:54 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: Dani2
+Dni: 1452637
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+
+Propina agregada S/.1.50
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	2	S/.1.2	S/.2.4
+-------------------------------------Total                              S/.7.4
+Fecha:Sun Jul 02 15:36:17 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 1213
+Dni: 1234567
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:38:54 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 123
+Dni: 1231231
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:42:51 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 123456
+Dni: 456123
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:43:24 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 1
+Dni: 1
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:43:47 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 1
+Dni: 1
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:46:37 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 1
+Dni: 1
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:48:20 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 1
+Dni: 1
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:49:07 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 1
+Dni: 1
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:50:52 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 1
+Dni: 1
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:53:56 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 1
+Dni: 1
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2
+Fecha:Sun Jul 02 15:55:00 PET 2023
+Atencion Realizada por: Antonio
+++++++++++++++++++++++++++++++++++++++++
+
+*******BOLETA DE VENTA*********
+Nombre: 123
+Dni: 123
+Metodo de pago: false
+Direccion: ||En TIENDA||
+
+++++++++++++++++++++++++++++++++++++++++++
+Producto	Cantidad	Precio	SubTotal
+pan  	1	S/.1.2	S/.1.2
+-------------------------------------Total                              S/.1.2

@@ -56,7 +56,7 @@
                               <EmptySpace min="-2" pref="166" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="109" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="cajaDNI" alignment="1" pref="271" max="32767" attributes="0"/>
                                   <Component id="cajaNombre" alignment="1" max="32767" attributes="0"/>
@@ -87,7 +87,7 @@
                                                   <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
-                                                  <Component id="jLabel9" pref="84" max="32767" attributes="0"/>
+                                                  <Component id="jLabel9" max="32767" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -199,7 +199,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonAceptar">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Aceptar"/>
+        <Property name="text" type="java.lang.String" value="Finalizar"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="botonAceptarMouseClicked"/>
@@ -310,7 +310,7 @@
     </Component>
     <Component class="javax.swing.JCheckBox" name="check">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Propina(S/.1.50)"/>
+        <Property name="text" type="java.lang.String" value="Propina(S/.5.00)"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkActionPerformed"/>

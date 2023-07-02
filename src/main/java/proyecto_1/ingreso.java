@@ -5,6 +5,7 @@
  */
 package proyecto_1;
 
+import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
 
@@ -164,6 +165,8 @@ public class ingreso extends javax.swing.JFrame {
         String contrasenia;
         String pass=new String(pasword.getPassword());
         boolean band=false;
+         LocalDateTime fechaActual = LocalDateTime.now();
+    System.out.println("Fecha actual: " + fechaActual+"\n");
        if(pass.equals(contraseniaAdmin)){//si la contraseña es 0000 entonces accedera al modo administrador
                 panelAdministrador b=new panelAdministrador();
                 b.setVisible(true);

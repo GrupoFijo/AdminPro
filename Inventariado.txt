@@ -1,51 +1,31 @@
-5.2
+0.0
 Producto 
-Bolsa de chupetines
-5510
-8
-8.2
-Producto 
-Arroz*Kg
-5482
-2
-5.2
-Producto 
-Barra de chocolate Donofrio
-5120
-5
-2.5
-Producto 
-Lata de Milo
-1205
-42
-16.8
-Producto 
-Papas Lay
-1523
-35
-2.5
-Producto 
-Bolsa de Pan(15 un.)
-2258
-10
-3.0
-Producto 
-Galleta Ritz
-6395
-45
-1.0
-Producto 
-Pepsi
-9676
-80
-2.2
-Producto 
-Doritos
-1002
-65
+pan
+1000
+19
 1.2
 Producto 
-INKA COLA 2L
-6334
-39
-6.0
+Arroz
+1001
+3
+2.0
+Producto 
+1
+1002
+3
+2.0
+Producto 
+12
+1003
+3
+2.0
+Producto 
+12
+1004
+3
+2.0
+Producto 
+1
+1005
+2
+3.0

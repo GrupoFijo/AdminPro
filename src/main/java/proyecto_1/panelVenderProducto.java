@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 public class panelVenderProducto extends javax.swing.JFrame {
 
     private int code;
+    public static float subtotal=0;
     public static boolean bandera=false;
     public static fomularioVentas y;
     public static List<Integer>cantidades;//varible que trabaja a la par con Carrito,almacena las cantidades solicitadas
@@ -307,7 +308,7 @@ public class panelVenderProducto extends javax.swing.JFrame {
         this.mostrarProducto.setVisible(true);
         this.cajaCodigo.setEnabled(true);
         text+="Producto:\t"+admin.getVendedores().get(i).getListaProducto().get(code).getDescipcion()+"\n";
-        text+="Precio:  \t"+"S/.*"+admin.getVendedores().get(i).getListaProducto().get(code).getPrecio()+"\n";
+        text+="Precio:  \t"+"S/."+admin.getVendedores().get(i).getListaProducto().get(code).getPrecio()+"\n";
         text+="Cantidad:\t"+admin.getVendedores().get(i).getListaProducto().get(code).getCantidad()+"\n";
         this.mostrarProducto.setText(text);
         }
@@ -351,10 +352,10 @@ public class panelVenderProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_botonContinuarMouseClicked
 
     private void botonAñadirAlCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAñadirAlCarritoMouseClicked
-         try {        
+        try {        
              //este boton añade el indice del producto al carrito con sus cantidades
          int cant=Integer.parseInt(cajaCantidadDeProductos.getText());
-        if((cant>admin.getVendedores().get(i).getListaProducto().get(code).getCantidad())&&cant>=25){
+        if((cant>admin.getVendedores().get(i).getListaProducto().get(code).getCantidad())||cant>=25){
         JOptionPane.showMessageDialog(null,"La cantidad ingresada excede el limite");
         }
         if(admin.getVendedores().get(i).getListaProducto().get(code).getCantidad()==0){
@@ -365,6 +366,16 @@ public class panelVenderProducto extends javax.swing.JFrame {
             this.botonContinuar.setVisible(true);
             JOptionPane.showMessageDialog(null,"Producto Ingresado al carrito");//si las cantidades estan dentro del rango, seran almacenados al carrito
             cantidades.add(cant);
+            
+            
+            /////->calculando el subTotal
+            subtotal+=admin.getVendedores().get(i).getListaProducto().get(code).getPrecio()*cant;
+            /////
+            ////->Limpiar el layout
+            this.mostrarProducto.setText("");
+            this.CajaBuscador.setText("");
+            this.cajaCantidadDeProductos.setText("");
+            this.cajaCodigo.setText("");
         }
         } catch (Exception e) {
             e.printStackTrace(); JOptionPane.showMessageDialog(null,"ERROR:"+e.toString()+"\nRellenar Correctamente los campos");

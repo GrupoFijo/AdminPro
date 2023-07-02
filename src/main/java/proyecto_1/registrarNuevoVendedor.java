@@ -42,7 +42,7 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         cajaComision = new javax.swing.JTextField();
 
-        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        setBorder(null);
 
         botonAceptar.setText("Aceptar");
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -142,7 +142,7 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                         .addComponent(cajaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(87, 87, 87)
                         .addComponent(botonAceptar)))
-                .addGap(64, 64, 64))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,7 +189,7 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                             .addComponent(botonAceptar)))))
         );
 
-        setBounds(0, 0, 492, 517);
+        setBounds(0, 0, 539, 517);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAceptarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonAceptarKeyPressed
