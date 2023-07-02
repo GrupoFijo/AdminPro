@@ -42,7 +42,7 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
         jLabel7 = new javax.swing.JLabel();
         cajaComision = new javax.swing.JTextField();
 
-        getContentPane().setLayout(null);
+        setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         botonAceptar.setText("Aceptar");
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -55,48 +55,28 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                 botonAceptarKeyPressed(evt);
             }
         });
-        getContentPane().add(botonAceptar);
-        botonAceptar.setBounds(330, 410, 72, 23);
 
         jLabel1.setText("Nombre");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(10, 30, 44, 16);
 
         jLabel2.setText("Edad");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(10, 113, 26, 16);
 
         jLabel3.setText("Contraseña");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 410, 60, 16);
 
         jLabel4.setText("Comision");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(10, 230, 60, 16);
 
         cajaSueldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cajaSueldoActionPerformed(evt);
             }
         });
-        getContentPane().add(cajaSueldo);
-        cajaSueldo.setBounds(70, 150, 351, 22);
-        getContentPane().add(cajaNombre);
-        cajaNombre.setBounds(67, 30, 354, 22);
 
         cajaEdad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cajaEdadActionPerformed(evt);
             }
         });
-        getContentPane().add(cajaEdad);
-        cajaEdad.setBounds(70, 110, 354, 22);
 
         jLabel5.setText("Apellido");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(10, 73, 44, 16);
-        getContentPane().add(cajaApellido);
-        cajaApellido.setBounds(70, 70, 354, 22);
 
         botonGenera.setText("Generar Contraseña");
         botonGenera.addActionListener(new java.awt.event.ActionListener() {
@@ -109,26 +89,107 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                 botonGeneraKeyPressed(evt);
             }
         });
-        getContentPane().add(botonGenera);
-        botonGenera.setBounds(70, 280, 134, 53);
 
         cajaCodigo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        getContentPane().add(cajaCodigo);
-        cajaCodigo.setBounds(100, 390, 143, 64);
 
         jLabel6.setText("Sueldo");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(13, 153, 36, 16);
-        getContentPane().add(cajaUsuario);
-        cajaUsuario.setBounds(70, 190, 351, 22);
 
         jLabel7.setText("Usuario");
-        getContentPane().add(jLabel7);
-        jLabel7.setBounds(10, 190, 40, 16);
-        getContentPane().add(cajaComision);
-        cajaComision.setBounds(70, 230, 351, 22);
 
-        pack();
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel1)
+                        .addGap(13, 13, 13)
+                        .addComponent(cajaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel5)
+                        .addGap(16, 16, 16)
+                        .addComponent(cajaApellido, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel2)
+                        .addGap(34, 34, 34)
+                        .addComponent(cajaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(jLabel6)
+                        .addGap(21, 21, 21)
+                        .addComponent(cajaSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel7)
+                        .addGap(20, 20, 20)
+                        .addComponent(cajaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(cajaComision, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(botonGenera))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jLabel3)
+                        .addGap(30, 30, 30)
+                        .addComponent(cajaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(87, 87, 87)
+                        .addComponent(botonAceptar)))
+                .addGap(64, 64, 64))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(cajaNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel5))
+                    .addComponent(cajaApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel2))
+                    .addComponent(cajaEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(3, 3, 3)
+                        .addComponent(jLabel6))
+                    .addComponent(cajaSueldo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(cajaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(cajaComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(botonGenera, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cajaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(botonAceptar)))))
+        );
+
+        setBounds(0, 0, 492, 517);
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonAceptarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonAceptarKeyPressed
@@ -166,18 +227,13 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
        int edad=Integer.parseInt(cajaEdad.getText());
        float sueldo=Float.parseFloat(cajaSueldo.getText());
        
-        Vendedor v = new Vendedor(sueldo, nombre, apellido, usuario, cajaCodigo.getText(), edad,comi,true);
+        Vendedor v = new Vendedor(900000,sueldo, nombre, apellido, usuario, cajaCodigo.getText(), edad,comi,true);
         try {
         admin.addVendedor(v);
         System.out.println("Trabajador registrado correctamente.");
         }catch (SQLException e){
         System.out.println("Error al registrar el Trabajador: " + e.getMessage());
         }
-        
-        
-        
-        
-        
     }//GEN-LAST:event_botonAceptarActionPerformed
 
     private void botonGeneraKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonGeneraKeyPressed
