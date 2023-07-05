@@ -1,6 +1,8 @@
 
 package proyecto_1;
 
+import javax.swing.JOptionPane;
+
 
 public class panelVentas extends javax.swing.JFrame {
 
@@ -41,6 +43,11 @@ public class panelVentas extends javax.swing.JFrame {
         botonIngresarProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 botonIngresarProductoMouseClicked(evt);
+            }
+        });
+        botonIngresarProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIngresarProductoActionPerformed(evt);
             }
         });
 
@@ -110,10 +117,18 @@ public class panelVentas extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVentaActionPerformed
 
     private void botonIngresarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonIngresarProductoMouseClicked
-       agregarProducto a=new agregarProducto();
+       try{
+        agregProduc a=new agregProduc();
        a.setVisible(true);
-       dispose();
+       //dispose();
+       }catch(Exception ex){
+        JOptionPane.showMessageDialog(null,"Error ::" +ex.getMessage());
+    }
     }//GEN-LAST:event_botonIngresarProductoMouseClicked
+
+    private void botonIngresarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarProductoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonIngresarProductoActionPerformed
 
     /**
      * @param args the command line arguments
