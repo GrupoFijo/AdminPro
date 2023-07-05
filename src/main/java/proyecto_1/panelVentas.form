@@ -31,19 +31,19 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="botonVenta" alignment="0" max="32767" attributes="0"/>
-                  <Component id="botonResumen" max="32767" attributes="0"/>
-                  <Component id="botonIngresarProducto" alignment="1" max="32767" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
               <Component id="BotonSalir" min="-2" pref="130" max="-2" attributes="0"/>
               <EmptySpace pref="101" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="botonResumen" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botonIngresarProducto" alignment="0" max="32767" attributes="0"/>
+                  <Component id="botonVenta" alignment="1" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -54,7 +54,7 @@
               <Component id="botonVenta" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="botonIngresarProducto" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="botonResumen" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="BotonSalir" min="-2" pref="44" max="-2" attributes="0"/>
@@ -66,6 +66,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="botonVenta">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="A:\AdminPro\AdminPro\src\main\resources\imagenes\acep.jpg"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Venta!"/>
       </Properties>
       <Events>
