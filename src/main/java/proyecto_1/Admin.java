@@ -164,12 +164,16 @@ public class Admin {
     SQLCon database = new SQLCon();
     
     PreparedStatement ps;
-    ps = database.getConect().prepareStatement("INSERT INTO trabajador VALUES (null, ?, ?, ?, 1, ?, ?)");
+    ps = database.getConect().prepareStatement("INSERT INTO trabajador VALUES (null, ?,?,?,?,?,?,?,?)");
     ps.setString(1, v.getNombre());
     ps.setString(2, v.getApellido());
     ps.setInt(3, v.getEdad());
     ps.setFloat(4, v.getSueldo());
     ps.setInt(5, v.getComisiones());
+    ps.setInt(6, v.getComisiones());
+    ps.setInt(7, v.getComisiones());
+    ps.setInt(8, v.getComisiones());
+    ps.setInt(9, v.getComisiones());
     
     ps.executeUpdate();
     

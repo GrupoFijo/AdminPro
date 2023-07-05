@@ -30,13 +30,13 @@ public class Vendedor extends Usuario{//Usuario hereda a Vendedor
     static List<Integer>carrito;
     
     
-    public Vendedor(int id,float sueldo, String nombre,String apellido,String usuario, String codigo, int edad,int comisiones,boolean activo) {
+    public Vendedor(int id,float sueldo, String nombre,String apellido,String usuario, String codigo, int edad,int comision,boolean activo) {
         super(nombre,codigo,edad);
         this.id=id;
         this.sueldo = sueldo;
         this.apellido=apellido;
         this.usuario=usuario;
-        this.comisiones=comisiones;
+        this.comisiones=comision;
         this.activo=activo;
         //Al iniciar el Inventario este sera lecturado del archivo
         Inventario inventario=new Inventario();

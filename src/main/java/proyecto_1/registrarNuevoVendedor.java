@@ -29,7 +29,6 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         cajaSueldo = new javax.swing.JTextField();
         cajaNombre = new javax.swing.JTextField();
         cajaEdad = new javax.swing.JTextField();
@@ -40,7 +39,6 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         cajaUsuario = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        cajaComision = new javax.swing.JTextField();
 
         setBorder(null);
 
@@ -61,8 +59,6 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
         jLabel2.setText("Edad");
 
         jLabel3.setText("Contraseña");
-
-        jLabel4.setText("Comision");
 
         cajaSueldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,11 +124,6 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                         .addGap(20, 20, 20)
                         .addComponent(cajaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0)
-                        .addComponent(cajaComision, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(70, 70, 70)
                         .addComponent(botonGenera))
                     .addGroup(layout.createSequentialGroup()
@@ -173,11 +164,7 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(cajaUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(cajaComision, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
+                .addGap(68, 68, 68)
                 .addComponent(botonGenera, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,11 +210,10 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
        String nombre=cajaNombre.getText();
        String apellido=cajaApellido.getText();
        String usuario=cajaUsuario.getText();
-       int comi=Integer.parseInt(cajaComision.getText());
        int edad=Integer.parseInt(cajaEdad.getText());
        float sueldo=Float.parseFloat(cajaSueldo.getText());
        
-        Vendedor v = new Vendedor(900000,sueldo, nombre, apellido, usuario, cajaCodigo.getText(), edad,comi,true);
+        Vendedor v = new Vendedor(900000,sueldo, nombre, apellido, usuario, cajaCodigo.getText(), edad,0,true);
         try {
         admin.addVendedor(v);
         System.out.println("Trabajador registrado correctamente.");
@@ -272,7 +258,6 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
     private javax.swing.JButton botonGenera;
     private javax.swing.JTextField cajaApellido;
     private javax.swing.JLabel cajaCodigo;
-    private javax.swing.JTextField cajaComision;
     private javax.swing.JTextField cajaEdad;
     private javax.swing.JTextField cajaNombre;
     private javax.swing.JTextField cajaSueldo;
@@ -280,7 +265,6 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;

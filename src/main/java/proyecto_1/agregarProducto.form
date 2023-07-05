@@ -233,9 +233,6 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="botonA&#xf1;adir">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USUARIO\Desktop\admin\Nueva carpeta\AdminPro\src\main\resources\imagenes\a&#xf1;a&#xf1;in.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
       </Properties>
       <Events>
@@ -246,7 +243,7 @@
     <Component class="javax.swing.JButton" name="cancelar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USUARIO\Desktop\admin\Nueva carpeta\AdminPro\src\main\resources\imagenes\cancelar.png"/>
+          <Image iconType="2" name="A:\AdminPro\AdminPro\src\main\resources\imagenes\cancelar.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Cancelar"/>
       </Properties>
@@ -338,9 +335,6 @@
     </Container>
     <Component class="javax.swing.JButton" name="botonActualizar">
       <Properties>
-        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\USUARIO\Desktop\admin\Nueva carpeta\AdminPro\src\main\resources\imagenes\actualizar-flecha.png"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Actualizar"/>
       </Properties>
       <Events>

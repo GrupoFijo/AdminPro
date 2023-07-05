@@ -67,7 +67,7 @@
     <Component class="javax.swing.JButton" name="botonVenta">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="A:\AdminPro\AdminPro\src\main\resources\imagenes\acep.jpg"/>
+          <Image iconType="2" name="A:\AdminPro\AdminPro\src\main\resources\imagenes\ACE.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Venta!"/>
       </Properties>
@@ -77,6 +77,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonIngresarProducto">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="A:\AdminPro\AdminPro\src\main\resources\imagenes\anadir.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Ingresar Producto"/>
       </Properties>
       <Events>
