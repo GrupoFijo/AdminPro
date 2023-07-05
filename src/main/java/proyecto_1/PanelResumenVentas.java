@@ -62,6 +62,7 @@ public class PanelResumenVentas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(mostrarResumen);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\aceptar.jpg")); // NOI18N
         jButton1.setText("Aceptar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
