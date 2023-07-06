@@ -22,7 +22,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author daniel
+ * @author daniels
  */
 public class Admin {
       public List<Vendedor> vendedores= new ArrayList<>();// se necesitara una Lista dinamica para almanecar a los vendedores
