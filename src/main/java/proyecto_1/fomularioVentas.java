@@ -363,6 +363,7 @@ public class fomularioVentas extends javax.swing.JFrame {
             ps.executeUpdate();
             ps.close();
          insertarDetalleVenta();
+         actualizarProdV();
          database.getConect().close();
         panelDeImpresion c=new panelDeImpresion();
         c.setVisible(true);
@@ -518,4 +519,20 @@ public class fomularioVentas extends javax.swing.JFrame {
       }
       
     }
+        private void actualizarProdV(){
+        try {
+            int indexAux=0,cantAux=0;
+            
+            for(int i=0;i<panelVenderProducto.carrito.size();i++){
+             indexAux=panelVenderProducto.carrito.get(i);
+            cantAux=panelVenderProducto.cantidades.get(i);  
+            PreparedStatement ps_=database.getConect().prepareStatement("UPDATE producto set cantidad = cantidad -"+cantAux+"  WHERE idProducto= "+panelVenderProducto.admin.getVendedores().get(indice).getListaProducto().get(indexAux).getCodigo());
+            ps_.executeUpdate();
+            }
+        } catch (Exception e) {
+            
+            
+        }
+    }
+    
 }
