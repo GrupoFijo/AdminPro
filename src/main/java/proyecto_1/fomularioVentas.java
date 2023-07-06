@@ -1,5 +1,7 @@
 package proyecto_1;
 
+import com.itextpdf.text.pdf.PdfWriter;
+import java.io.FileOutputStream;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -7,6 +9,14 @@ import java.time.LocalDate;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.event.DocumentListener;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.text.Element;
+import javax.swing.text.Position;
+import javax.swing.text.Segment;
 
 public class fomularioVentas extends javax.swing.JFrame {
 
@@ -332,9 +342,13 @@ public class fomularioVentas extends javax.swing.JFrame {
 
     private void botonAceptarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAceptarMouseClicked
          boolean metodopago;
+                    
         try {
             //al pulsar este boton se pasara los datos obtenidos y se agregan a la variable TextFormulario para pasar a la impresion
-                
+           
+            
+            
+            
            if(rbTarjeta.isSelected()){
               metodopago=true;
            }else metodopago=false;
@@ -351,9 +365,10 @@ public class fomularioVentas extends javax.swing.JFrame {
         }
         if(check.isSelected()){
             adicional+=5;
-            textFormulario+="\n\nPropina agregada S/.1.50";
+            textFormulario+="\n\nPropina agregada S/.5.00";
             }       
         //////////lo que se ira a la DB
+        
         LocalDate fecha=LocalDate.now();
             ps=database.getConect().prepareStatement("INSERT INTO venta VALUES (null,?,?,?,?)");
             ps.setDate(1,java.sql.Date.valueOf(java.time.LocalDate.now()));

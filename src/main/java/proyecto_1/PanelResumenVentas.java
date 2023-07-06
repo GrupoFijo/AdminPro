@@ -7,6 +7,7 @@ import java.io.FileReader;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -16,37 +17,34 @@ public class PanelResumenVentas extends javax.swing.JFrame {
     
     //en esta clase se lecturaran los datos del usuario quien esta operando actualmente y luego se agregara el texto completo de Ventas
     
-
+       
     public PanelResumenVentas() {
         this.setLocationRelativeTo(null);
         int i=ingreso.index;
-        Date fecha=null;
-        String cliente="";
-        float total=0;
-        String idTrabajador="";
+
         
-        Admin admin=new Admin();
-        initComponents();
+//        Admin admin=new Admin();
+      initComponents();
         this.getContentPane().setBackground(Color.getHSBColor(0.6f, 0.3f, 1f));
-         String text="Datos del Usuario:\n"+admin.getVendedores().get(i).getNombre()+"\nComisiones realizadas:"+admin.getVendedores().get(i).getComisiones()
-                 +"\nPaga S/."+admin.getVendedores().get(i).getSueldo()
-                 +"\n\nRESUMEN DE LAS VENTAS\n********************************************\n";
-         File file=null;
-         FileReader fr=null;
-         BufferedReader br=null;
-        try{
-            file=new File("Ventas.txt");
-            fr=new FileReader(file);
-            br=new BufferedReader(fr);
-          String aux;
-           while((aux=br.readLine())!=null){
-               text+="\n"+aux+"\n"+br.readLine();
-           }
-        }catch(Exception e){
-            e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nNo se pudo leer");
-            //si hay un error dentro de la lectura entonces se lanzara una excepxion;
-        }
-        this.mostrarResumen.setText(text);//finalmente sera mostrado en Area de texto
+//         String text="Datos del Usuario:\n"+admin.getVendedores().get(i).getNombre()+"\nComisiones realizadas:"+admin.getVendedores().get(i).getComisiones()
+//                 +"\nPaga S/."+admin.getVendedores().get(i).getSueldo()
+//                 +"\n\nRESUMEN DE LAS VENTAS\n********************************************\n";
+//         File file=null;
+//         FileReader fr=null;
+//         BufferedReader br=null;
+//        try{
+//            file=new File("Ventas.txt");
+//            fr=new FileReader(file);
+//            br=new BufferedReader(fr);
+//          String aux;
+//           while((aux=br.readLine())!=null){
+//               text+="\n"+aux+"\n"+br.readLine();
+//           }
+//        }catch(Exception e){
+//            e.printStackTrace();JOptionPane.showMessageDialog(null, "oh!, Algo ha salido mal!\nNo se pudo leer");
+//            //si hay un error dentro de la lectura entonces se lanzara una excepxion;
+//        }
+      //  this.mostrarResumen.setText(text);//finalmente sera mostrado en Area de texto
         URL imageURL = getClass().getResource("/imagenes/aceptar.png");
         if (imageURL != null) {
             ImageIcon icon = new ImageIcon(imageURL);
@@ -162,16 +160,45 @@ public class PanelResumenVentas extends javax.swing.JFrame {
         SQLCon database= new SQLCon();
         PreparedStatement ps=null;
         ResultSet rs=null;
+        
         int idventa=Integer.parseInt(cajaBuscar.getText());
         try {
-              
-              ps=database.getConect().prepareStatement("SELECT*FROM venta where idVenta="+idventa);
+            String fecha;
+            String cliente="";
+            float total=0;
+            int idTrabajador=0;
+            String text="";
+              ps=database.getConect().prepareStatement("SELECT * FROM venta WHERE idventa="+idventa);
               rs=ps.executeQuery();
               rs.next();
               if(rs.getInt("idVenta")==idventa){
                   JOptionPane.showMessageDialog(null,"Codigo encontrado");
+                  fecha=rs.getDate("fecha").toString();
+                  cliente=rs.getString("cliente");
+                  total=rs.getFloat("total");
+                  idTrabajador=rs.getInt("Trabajador_idTrabajador");
+                  text+="\n\t\tFecha de emision:"+fecha.toString();
+                  text+="\nAtencion Realizada por:"+new Admin().getVendedores().get(idTrabajador).getNombre();
+                  text+="\n-Compra en tienda-\n";
+                  text+="-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-/-\n";
+                  text+="|Productos comprados:\n";
+                  ps=database.getConect().prepareStatement("SELECT * ,precio_unit * cantidad AS total  FROM detalleventa WHERE idVenta="+idventa);
+                  rs=ps.executeQuery();
+                  text+="|Cantidad\t|Descripción\nid\nPrecio U.\t\tSubtotal\n";
+                  while(rs.next()){
+                   float cant=rs.getInt("cantidad");
+                  float precio=rs.getFloat("precio_unit");
+                  text+=cant+"\t";
+                  text+=rs.getString("descripcion")+"\t";
+                  text+=rs.getInt("idProd")+"\tS/.";
+                  text+=precio+"\t\tS/.";
+                  text+=rs.getFloat("total")+"\n";
+                    }
+                  text+="\n----------------Total=S/."+total;
+                  text+="\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n";
+                  text+="Cliente:"+cliente+"\n";
                   
-                  
+                  this.mostrarResumen.setText(text);
               }
               else
                   JOptionPane.showMessageDialog(null,"codigo no encontrado");
