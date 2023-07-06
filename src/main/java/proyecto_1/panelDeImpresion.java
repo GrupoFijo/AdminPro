@@ -83,6 +83,7 @@ public class panelDeImpresion extends javax.swing.JFrame {
         setTitle("*Impresion+");
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        BotonFinalizar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\finalizar-la-sesion (1).png")); // NOI18N
         BotonFinalizar.setText("FINALIZAR");
         BotonFinalizar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -117,7 +118,7 @@ public class panelDeImpresion extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 502, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 493, Short.MAX_VALUE)
                 .addGap(16, 16, 16)
                 .addComponent(BotonFinalizar)
                 .addContainerGap())

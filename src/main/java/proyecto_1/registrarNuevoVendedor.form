@@ -73,7 +73,7 @@
                       <Component id="botonAceptar" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="115" max="32767" attributes="0"/>
+              <EmptySpace pref="109" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -134,6 +134,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="botonAceptar">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\USUARIO\Desktop\admin\Nueva carpeta\AdminPro\src\main\resources\imagenes\ACE.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Aceptar"/>
       </Properties>
       <Events>
@@ -177,6 +180,9 @@
     </Component>
     <Component class="javax.swing.JButton" name="botonGenera">
       <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="2" name="C:\Users\USUARIO\Desktop\admin\Nueva carpeta\AdminPro\src\main\resources\imagenes\contrasena.png"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Generar Contrase&#xf1;a"/>
       </Properties>
       <Events>

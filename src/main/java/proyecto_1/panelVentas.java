@@ -1,6 +1,7 @@
 
 package proyecto_1;
 
+import java.awt.Color;
 import java.net.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -16,6 +17,7 @@ public class panelVentas extends javax.swing.JFrame {
     public static panelVenderProducto x;
     public panelVentas() {
         initComponents();
+        this.getContentPane().setBackground(Color.getHSBColor(0.5f, 1f, 0.3f));
         this.setLocationRelativeTo(null);
         
 ////        URL see=getClass().getResource("/imagenes/acept.jpg");
@@ -41,8 +43,8 @@ public class panelVentas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestor de Venta");
+        setBackground(new java.awt.Color(0, 102, 255));
 
-        botonVenta.setIcon(new javax.swing.ImageIcon("A:\\AdminPro\\AdminPro\\src\\main\\resources\\imagenes\\ACE.png")); // NOI18N
         botonVenta.setText("Venta!");
         botonVenta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +52,6 @@ public class panelVentas extends javax.swing.JFrame {
             }
         });
 
-        botonIngresarProducto.setIcon(new javax.swing.ImageIcon("A:\\AdminPro\\AdminPro\\src\\main\\resources\\imagenes\\anadir.png")); // NOI18N
         botonIngresarProducto.setText("Ingresar Producto");
         botonIngresarProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

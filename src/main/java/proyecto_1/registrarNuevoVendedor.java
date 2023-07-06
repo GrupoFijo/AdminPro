@@ -42,6 +42,7 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
 
         setBorder(null);
 
+        botonAceptar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\ACE.png")); // NOI18N
         botonAceptar.setText("Aceptar");
         botonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -74,6 +75,7 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
 
         jLabel5.setText("Apellido");
 
+        botonGenera.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\contrasena.png")); // NOI18N
         botonGenera.setText("Generar Contraseña");
         botonGenera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -133,7 +135,7 @@ public class registrarNuevoVendedor extends javax.swing.JInternalFrame {
                         .addComponent(cajaCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(87, 87, 87)
                         .addComponent(botonAceptar)))
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

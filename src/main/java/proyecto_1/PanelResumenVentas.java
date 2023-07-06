@@ -1,5 +1,6 @@
 package proyecto_1;
 
+import java.awt.Color;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -16,6 +17,7 @@ public class PanelResumenVentas extends javax.swing.JFrame {
         int i=ingreso.index;
         Admin admin=new Admin();
         initComponents();
+        this.getContentPane().setBackground(Color.getHSBColor(0.6f, 0.3f, 1f));
          String text="Datos del Usuario:\n"+admin.getVendedores().get(i).getNombre()+"\nComisiones realizadas:"+admin.getVendedores().get(i).getComisiones()
                  +"\nPaga S/."+admin.getVendedores().get(i).getSueldo()
                  +"\n\nRESUMEN DE LAS VENTAS\n********************************************\n";
@@ -55,6 +57,7 @@ public class PanelResumenVentas extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("*RESUMEN DE VENTAS*");
+        setBackground(new java.awt.Color(0, 102, 255));
 
         mostrarResumen.setEditable(false);
         mostrarResumen.setColumns(20);
@@ -62,7 +65,7 @@ public class PanelResumenVentas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(mostrarResumen);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("A:\\AdminPro\\AdminPro\\src\\main\\resources\\imagenes\\ACE.png")); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\ACE.png")); // NOI18N
         jButton1.setText("Aceptar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

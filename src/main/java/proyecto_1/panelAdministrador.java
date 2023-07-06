@@ -1,5 +1,6 @@
 package proyecto_1;
 
+import java.awt.Color;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,6 +20,7 @@ public class panelAdministrador extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,"Algo ha salido mal \n"+ex.toString());
         }
         initComponents();
+        this.getContentPane().setBackground(Color.getHSBColor(0.6f, 0.5f, 0.5f));
         this.setLocationRelativeTo(null);
     }
 
@@ -39,7 +41,7 @@ public class panelAdministrador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administrador");
-        setBackground(new java.awt.Color(0, 255, 255));
+        setBackground(new java.awt.Color(0, 204, 255));
 
         botonRegistrar.setText("Registrar nuevo vendedor");
         botonRegistrar.addAncestorListener(new javax.swing.event.AncestorListener() {

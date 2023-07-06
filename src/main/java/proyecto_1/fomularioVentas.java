@@ -81,6 +81,7 @@ public class fomularioVentas extends javax.swing.JFrame {
             }
         });
 
+        botonAceptar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\finalizar-la-sesion (1).png")); // NOI18N
         botonAceptar.setText("Finalizar");
         botonAceptar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -93,6 +94,7 @@ public class fomularioVentas extends javax.swing.JFrame {
             }
         });
 
+        botonCancelar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\cancelar.png")); // NOI18N
         botonCancelar.setText("Cancelar");
         botonCancelar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

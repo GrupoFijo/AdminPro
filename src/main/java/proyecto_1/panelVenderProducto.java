@@ -5,6 +5,7 @@
  */
 package proyecto_1;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -22,6 +23,7 @@ public class panelVenderProducto extends javax.swing.JFrame {
     private static final int i= ingreso.index;
     public panelVenderProducto() {
         initComponents();
+        this.getContentPane().setBackground(Color.getHSBColor(0.5f, 1f, 0.3f));
         cantidades=new ArrayList<Integer>();
         carrito=new ArrayList<Integer>();
         this.botonContinuar.setVisible(false);
@@ -78,6 +80,9 @@ public class panelVenderProducto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         setTitle("*Venta*");
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
         CajaBuscador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +90,7 @@ public class panelVenderProducto extends javax.swing.JFrame {
             }
         });
 
+        botonBuscador.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\buscar.png")); // NOI18N
         botonBuscador.setText("Buscar");
         botonBuscador.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -97,11 +103,14 @@ public class panelVenderProducto extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel1.setText("Ingrese codigo de producto");
+        jLabel1.setToolTipText("");
 
         panelProductoEncontrado.setBackground(new java.awt.Color(204, 204, 204));
 
         botonAñadirAlCarrito.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+        botonAñadirAlCarrito.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\anadir.png")); // NOI18N
         botonAñadirAlCarrito.setText("Ingresar Producto");
         botonAñadirAlCarrito.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -136,6 +145,7 @@ public class panelVenderProducto extends javax.swing.JFrame {
 
         jLabel3.setText("CODIGO DE DESCUENTO");
 
+        botonDescuento.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\ok.png")); // NOI18N
         botonDescuento.setText("OK.");
         botonDescuento.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -165,16 +175,14 @@ public class panelVenderProducto extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cajaCodigo))
                         .addGap(18, 18, 18)
+                        .addComponent(botonDescuento)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(panelProductoEncontradoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panelProductoEncontradoLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelProductoEncontradoLayout.createSequentialGroup()
                                 .addComponent(jLabel2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cajaCantidadDeProductos, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(panelProductoEncontradoLayout.createSequentialGroup()
-                                .addComponent(botonDescuento)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(botonAñadirAlCarrito, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(botonAñadirAlCarrito, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41))
                     .addGroup(panelProductoEncontradoLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 521, Short.MAX_VALUE)
@@ -201,6 +209,7 @@ public class panelVenderProducto extends javax.swing.JFrame {
         );
 
         botonRetroceder.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        botonRetroceder.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\flecha-izquierda.png")); // NOI18N
         botonRetroceder.setText("Atras");
         botonRetroceder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -209,6 +218,7 @@ public class panelVenderProducto extends javax.swing.JFrame {
         });
 
         botonContinuar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        botonContinuar.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\siguiente.png")); // NOI18N
         botonContinuar.setText("Continuar");
         botonContinuar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -228,99 +238,63 @@ public class panelVenderProducto extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(botonBuscador)
-                        .addGap(35, 35, 35)
-                        .addComponent(CajaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(71, 71, 71)
-                        .addComponent(textoEmergente, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(botonRetroceder, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(293, 293, 293)
+                                .addGap(12, 12, 12)
+                                .addComponent(botonRetroceder, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(botonContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(panelProductoEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(62, Short.MAX_VALUE))
+                            .addComponent(panelProductoEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(48, 48, 48)
+                        .addComponent(botonBuscador)
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(CajaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(71, 71, 71)
+                                .addComponent(textoEmergente, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(jLabel1)
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(botonBuscador)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addComponent(CajaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(CajaBuscador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(botonBuscador)))
                     .addComponent(textoEmergente, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(51, 51, 51)
+                .addGap(54, 54, 54)
                 .addComponent(panelProductoEncontrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonRetroceder, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-4, 0, 600, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void CajaBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaBuscadorActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CajaBuscadorActionPerformed
+    private void botonContinuarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonContinuarKeyPressed
 
-    private void botonBuscadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscadorMouseClicked
-           try {
-               //se realiza la busqueda secuencial a travez de la funcion de Vendedores: BuscarProducto
-        code=Integer.parseInt(CajaBuscador.getText());
-        code=admin.getVendedores().get(i).buscarProducto(code); String text="";
-        this.textoEmergente.setVisible(true);
-        if(code==-1){
-              this.textoEmergente.setText("Producto no encontrado");//si no lo encuentra mandara un mensaje en el panel
-              this.mostrarProducto.setText("");
-              this.cajaCantidadDeProductos.setEnabled(false);
-              this.botonAñadirAlCarrito.setEnabled(false);
-        }else{
-        this.textoEmergente.setText("Producto Encontrado");//si encuentra el producto entonces el panel y el area de texto mostraran los datos
-        this.botonAñadirAlCarrito.setEnabled(true);
-        this.cajaCantidadDeProductos.setEnabled(true);
-        this.mostrarProducto.setEnabled(true);
-        this.mostrarProducto.setVisible(true);
-        this.cajaCodigo.setEnabled(true);
-        text+="Producto:\t"+admin.getVendedores().get(i).getListaProducto().get(code).getDescipcion()+"\n";
-        text+="Precio:  \t"+"S/."+admin.getVendedores().get(i).getListaProducto().get(code).getPrecio()+"\n";
-        text+="Cantidad:\t"+admin.getVendedores().get(i).getListaProducto().get(code).getCantidad()+"\n";
-        this.mostrarProducto.setText(text);
-        }
-        } catch (Exception e) {
-             e.printStackTrace(); JOptionPane.showMessageDialog(null,"ERROR:"+e.toString()+"\nRellenar Correctamente los campos");
-        }
-        // TODO add your handling code here:
-    }//GEN-LAST:event_botonBuscadorMouseClicked
-    
-    private void cajaCantidadDeProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaCantidadDeProductosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cajaCantidadDeProductosActionPerformed
+    }//GEN-LAST:event_botonContinuarKeyPressed
+
+    private void botonContinuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonContinuarMouseClicked
+        y=new fomularioVentas();
+        y.setVisible(true);
+    }//GEN-LAST:event_botonContinuarMouseClicked
 
     private void botonRetrocederActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRetrocederActionPerformed
         // TODO add your handling code here:
@@ -329,77 +303,103 @@ public class panelVenderProducto extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_botonRetrocederActionPerformed
 
-    private void botonAñadirAlCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirAlCarritoActionPerformed
-       
-        
-    }//GEN-LAST:event_botonAñadirAlCarritoActionPerformed
+    private void botonDescuentoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonDescuentoKeyPressed
 
-    private void botonBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscadorActionPerformed
-
-    }//GEN-LAST:event_botonBuscadorActionPerformed
-
-    private void botonAñadirAlCarritoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonAñadirAlCarritoKeyPressed
-    
-    }//GEN-LAST:event_botonAñadirAlCarritoKeyPressed
-
-    private void botonContinuarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonContinuarKeyPressed
- 
-    }//GEN-LAST:event_botonContinuarKeyPressed
-
-    private void botonContinuarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonContinuarMouseClicked
-        y=new fomularioVentas();
-        y.setVisible(true);
-    }//GEN-LAST:event_botonContinuarMouseClicked
-
-    private void botonAñadirAlCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAñadirAlCarritoMouseClicked
-        try {        
-             //este boton añade el indice del producto al carrito con sus cantidades
-         int cant=Integer.parseInt(cajaCantidadDeProductos.getText());
-        if((cant>admin.getVendedores().get(i).getListaProducto().get(code).getCantidad())||cant>=25){
-        JOptionPane.showMessageDialog(null,"La cantidad ingresada excede el limite");
-        }
-        if(admin.getVendedores().get(i).getListaProducto().get(code).getCantidad()==0){
-        JOptionPane.showMessageDialog(null,"No hay stock disponible\nConsutar a administrador");
-        } 
-        if(cant<=admin.getVendedores().get(i).getListaProducto().get(code).getCantidad()){
-            carrito.add(code);
-            this.botonContinuar.setVisible(true);
-            JOptionPane.showMessageDialog(null,"Producto Ingresado al carrito");//si las cantidades estan dentro del rango, seran almacenados al carrito
-            cantidades.add(cant);
-            
-            
-            /////->calculando el subTotal
-            subtotal+=admin.getVendedores().get(i).getListaProducto().get(code).getPrecio()*cant;
-            /////
-            ////->Limpiar el layout
-            this.mostrarProducto.setText("");
-            this.CajaBuscador.setText("");
-            this.cajaCantidadDeProductos.setText("");
-            this.cajaCodigo.setText("");
-        }
-        } catch (Exception e) {
-            e.printStackTrace(); JOptionPane.showMessageDialog(null,"ERROR:"+e.toString()+"\nRellenar Correctamente los campos");
-        }
-    }//GEN-LAST:event_botonAñadirAlCarritoMouseClicked
+    }//GEN-LAST:event_botonDescuentoKeyPressed
 
     private void botonDescuentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonDescuentoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonDescuentoActionPerformed
 
-    private void botonDescuentoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonDescuentoKeyPressed
-        
-    }//GEN-LAST:event_botonDescuentoKeyPressed
-
     private void botonDescuentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonDescuentoMouseClicked
-    //este boton evalua el codigo de decuento a travez de la funcion CodeOffSale, el retorno devolvera un valor booleano, si es verdadero sera canjeado
+        //este boton evalua el codigo de decuento a travez de la funcion CodeOffSale, el retorno devolvera un valor booleano, si es verdadero sera canjeado
         if(this.cajaCodigo.getText()!=""){
             if(admin.getVendedores().get(i).codeOffSale(this.cajaCodigo.getText())){
-            bandera=true;
-            JOptionPane.showMessageDialog(null,"Codigo Canjeado");this.botonDescuento.setVisible(false);
+                bandera=true;
+                JOptionPane.showMessageDialog(null,"Codigo Canjeado");this.botonDescuento.setVisible(false);
             }else JOptionPane.showMessageDialog(null,"Codigo No valido");
         }else JOptionPane.showMessageDialog(null,"Codigo No valido");
     }//GEN-LAST:event_botonDescuentoMouseClicked
 
+    private void cajaCantidadDeProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cajaCantidadDeProductosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cajaCantidadDeProductosActionPerformed
+
+    private void botonAñadirAlCarritoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_botonAñadirAlCarritoKeyPressed
+
+    }//GEN-LAST:event_botonAñadirAlCarritoKeyPressed
+
+    private void botonAñadirAlCarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAñadirAlCarritoActionPerformed
+
+    }//GEN-LAST:event_botonAñadirAlCarritoActionPerformed
+
+    private void botonAñadirAlCarritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonAñadirAlCarritoMouseClicked
+        try {
+            //este boton añade el indice del producto al carrito con sus cantidades
+            int cant=Integer.parseInt(cajaCantidadDeProductos.getText());
+            if((cant>admin.getVendedores().get(i).getListaProducto().get(code).getCantidad())||cant>=25){
+                JOptionPane.showMessageDialog(null,"La cantidad ingresada excede el limite");
+            }
+            if(admin.getVendedores().get(i).getListaProducto().get(code).getCantidad()==0){
+                JOptionPane.showMessageDialog(null,"No hay stock disponible\nConsutar a administrador");
+            }
+            if(cant<=admin.getVendedores().get(i).getListaProducto().get(code).getCantidad()){
+                carrito.add(code);
+                this.botonContinuar.setVisible(true);
+                JOptionPane.showMessageDialog(null,"Producto Ingresado al carrito");//si las cantidades estan dentro del rango, seran almacenados al carrito
+                cantidades.add(cant);
+
+                /////->calculando el subTotal
+                subtotal+=admin.getVendedores().get(i).getListaProducto().get(code).getPrecio()*cant;
+                /////
+                ////->Limpiar el layout
+                this.mostrarProducto.setText("");
+                this.CajaBuscador.setText("");
+                this.cajaCantidadDeProductos.setText("");
+                this.cajaCodigo.setText("");
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); JOptionPane.showMessageDialog(null,"ERROR:"+e.toString()+"\nRellenar Correctamente los campos");
+        }
+    }//GEN-LAST:event_botonAñadirAlCarritoMouseClicked
+
+    private void botonBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscadorActionPerformed
+
+    }//GEN-LAST:event_botonBuscadorActionPerformed
+
+    private void botonBuscadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonBuscadorMouseClicked
+        try {
+            //se realiza la busqueda secuencial a travez de la funcion de Vendedores: BuscarProducto
+            code=Integer.parseInt(CajaBuscador.getText());
+            code=admin.getVendedores().get(i).buscarProducto(code); String text="";
+            this.textoEmergente.setVisible(true);
+            if(code==-1){
+                this.textoEmergente.setText("Producto no encontrado");//si no lo encuentra mandara un mensaje en el panel
+                this.mostrarProducto.setText("");
+                this.cajaCantidadDeProductos.setEnabled(false);
+                this.botonAñadirAlCarrito.setEnabled(false);
+            }else{
+                this.textoEmergente.setText("Producto Encontrado");//si encuentra el producto entonces el panel y el area de texto mostraran los datos
+                this.botonAñadirAlCarrito.setEnabled(true);
+                this.cajaCantidadDeProductos.setEnabled(true);
+                this.mostrarProducto.setEnabled(true);
+                this.mostrarProducto.setVisible(true);
+                this.cajaCodigo.setEnabled(true);
+                text+="Producto:\t"+admin.getVendedores().get(i).getListaProducto().get(code).getDescipcion()+"\n";
+                text+="Precio:  \t"+"S/."+admin.getVendedores().get(i).getListaProducto().get(code).getPrecio()+"\n";
+                text+="Cantidad:\t"+admin.getVendedores().get(i).getListaProducto().get(code).getCantidad()+"\n";
+                this.mostrarProducto.setText(text);
+            }
+        } catch (Exception e) {
+            e.printStackTrace(); JOptionPane.showMessageDialog(null,"ERROR:"+e.toString()+"\nRellenar Correctamente los campos");
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonBuscadorMouseClicked
+
+    private void CajaBuscadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CajaBuscadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CajaBuscadorActionPerformed
+    
     /**
      * @param args the command line arguments
      */
