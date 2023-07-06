@@ -497,7 +497,6 @@ public class fomularioVentas extends javax.swing.JFrame {
           rs.next();
           System.out.println(rs.getInt("idVenta"));
           idVenta=rs.getInt("idVenta");
-          JOptionPane.showMessageDialog(null,"rs listo: id->");
           rs.close();
           ps_iV.close();
             

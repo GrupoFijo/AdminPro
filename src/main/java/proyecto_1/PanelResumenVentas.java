@@ -5,6 +5,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.Date;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
@@ -12,9 +15,16 @@ import javax.swing.JOptionPane;
 public class PanelResumenVentas extends javax.swing.JFrame {
     
     //en esta clase se lecturaran los datos del usuario quien esta operando actualmente y luego se agregara el texto completo de Ventas
+    
+
     public PanelResumenVentas() {
         this.setLocationRelativeTo(null);
         int i=ingreso.index;
+        Date fecha=null;
+        String cliente="";
+        float total=0;
+        String idTrabajador="";
+        
         Admin admin=new Admin();
         initComponents();
         this.getContentPane().setBackground(Color.getHSBColor(0.6f, 0.3f, 1f));
@@ -37,7 +47,7 @@ public class PanelResumenVentas extends javax.swing.JFrame {
             //si hay un error dentro de la lectura entonces se lanzara una excepxion;
         }
         this.mostrarResumen.setText(text);//finalmente sera mostrado en Area de texto
-        URL imageURL = getClass().getResource("/ima/aceptar.png");
+        URL imageURL = getClass().getResource("/imagenes/aceptar.png");
         if (imageURL != null) {
             ImageIcon icon = new ImageIcon(imageURL);
             jButton1.setIcon(icon);
@@ -54,6 +64,9 @@ public class PanelResumenVentas extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         mostrarResumen = new javax.swing.JTextArea();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        buttonBuscar = new javax.swing.JButton();
+        cajaBuscar = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("*RESUMEN DE VENTAS*");
@@ -65,8 +78,7 @@ public class PanelResumenVentas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(mostrarResumen);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\admin\\Nueva carpeta\\AdminPro\\src\\main\\resources\\imagenes\\ACE.png")); // NOI18N
-        jButton1.setText("Aceptar");
+        jButton1.setText("Atras");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -78,27 +90,55 @@ public class PanelResumenVentas extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Ingresar Número de venta:");
+
+        buttonBuscar.setText("OK");
+        buttonBuscar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonBuscarMouseClicked(evt);
+            }
+        });
+        buttonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonBuscarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(173, 173, 173)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cajaBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(buttonBuscar)))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(173, 173, 173)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(buttonBuscar)
+                    .addComponent(cajaBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                .addGap(12, 12, 12))
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         pack();
@@ -113,6 +153,34 @@ public class PanelResumenVentas extends javax.swing.JFrame {
      a.setVisible(true);
      dispose();
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void buttonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBuscarActionPerformed
+
+    }//GEN-LAST:event_buttonBuscarActionPerformed
+
+    private void buttonBuscarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonBuscarMouseClicked
+        SQLCon database= new SQLCon();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        int idventa=Integer.parseInt(cajaBuscar.getText());
+        try {
+              
+              ps=database.getConect().prepareStatement("SELECT*FROM venta where idVenta="+idventa);
+              rs=ps.executeQuery();
+              rs.next();
+              if(rs.getInt("idVenta")==idventa){
+                  JOptionPane.showMessageDialog(null,"Codigo encontrado");
+                  
+                  
+              }
+              else
+                  JOptionPane.showMessageDialog(null,"codigo no encontrado");
+        } catch (Exception e) {
+              JOptionPane.showMessageDialog(null,"Codigo no existente\n--"+e.toString());
+        }
+         
+        
+    }//GEN-LAST:event_buttonBuscarMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -147,7 +215,10 @@ public class PanelResumenVentas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonBuscar;
+    private javax.swing.JTextField cajaBuscar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea mostrarResumen;
     // End of variables declaration//GEN-END:variables
